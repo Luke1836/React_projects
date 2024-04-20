@@ -4,10 +4,10 @@ function navbar() {
     return (
         <nav className='navbar'>
             <dl>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Services</li>
+                <dd>Home</dd>
+                <dd>About</dd>
+                <dd>Contact</dd>
+                <dd>Services</dd>
             </dl>
         </nav>
     );
