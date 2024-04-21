@@ -1,6 +1,6 @@
 import React from 'react'
 
-function navbar() {
+function Navbar() {
     return (
         <nav className='navbar'>
             <dl>
@@ -13,4 +13,4 @@ function navbar() {
     );
 }
 
-export default navbar;
+export default Navbar;
