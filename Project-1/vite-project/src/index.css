@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow: hidden;
+}
+
 #root {
     background-color: rgb(11, 0, 37);
     width: 100%;
@@ -47,4 +51,14 @@
     display: grid;
     place-content: center;
     opacity: 0.25;
+}
+
+@media screen and (max-width: 500px) {
+    .navbar {
+        padding: 1rem;
+
+        dl {
+            display: none;
+        }
+    }
 }
