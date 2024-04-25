@@ -2,4 +2,27 @@
     height: 80vh;
     width: 100%;
     color: whitesmoke;
+    position: absolute;
+    top: 20vh;
+    left: 0;
+    padding-left: 1rem;
+
+    h1{ 
+        font-size: 3rem;
+    }
+
+    ul {
+        list-style-type: disc;
+        padding-left: 3rem;
+        margin-top: 2rem;
+        line-height: 1.5;
+    }
+
+    ul li::marker {
+        color: aqua;
+    }
+
+    ul li {
+        font-size: 1.25rem;
+    }
 }
