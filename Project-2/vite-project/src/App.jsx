@@ -5,7 +5,7 @@ function App(props) {
     return (
         <div className="card">
             <div className="image_sec">
-                <img src={props.name} loading="lazy" alt={props.name} />
+                <img src={props.img} alt={props.name} />
             </div>
             <div className="description">
                 <h1>{props.name}</h1>
