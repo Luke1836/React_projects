@@ -3,13 +3,18 @@
     height: 300px;
     display: grid;
     place-content: center;
-    background-color: whitesmoke;
+    background-color: rgb(218, 214, 214);
     border: 3px solid black;
     outline: white solid 3px;
     border-radius: 20px;
 
     h1 {
         font-size: 1.5rem;
+        padding-left: 1rem;
+    }
+
+    p {
+        padding-left: 1rem;
     }
 
     h2 {
@@ -17,13 +22,16 @@
     }
 
     .image_sec {
-        width: 100%;
-        height: 50%;
+        width: 380px;
+        height: 180px;
+        padding: 6px;
+        margin-top: 0;
+        padding-top: 0;
     }
 
     img {
         width: 100%;
         height: 100%;
-        padding: 4px;
+        border-radius: 6px;
     }
 }
