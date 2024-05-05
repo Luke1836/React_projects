@@ -5,7 +5,10 @@ import database from './Database/info.js'
 
 function App() {
     const dataElements = database.map((item) => {
-        return <Card key={item.id} img={item.img} name={item.name} occupation={item.occupation} salary={item.salary} />
+        return <Card 
+                    key={item.id} 
+                    {...item} 
+                />
     });
 
     return (
