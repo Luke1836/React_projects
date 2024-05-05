@@ -13,7 +13,8 @@ body {
     width: 60%;
     margin: auto;
     background-color: papayawhip;
-
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 #root {
