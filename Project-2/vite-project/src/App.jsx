@@ -18,6 +18,17 @@ function App() {
 
 export default App;
 
+
+
+
+
+
+
+
+
+
+
+
 /*  <div className="card">
             <div className="image_sec">
                 <img src={props.img} alt={props.name} />
