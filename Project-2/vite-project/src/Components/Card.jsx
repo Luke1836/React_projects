@@ -8,10 +8,10 @@ function Card(props) {
             </div>
             <div className="description">
                 <h1>{props.name}</h1>
-                <p>
-                    <h2>Occupation: {props.occupation}</h2>
+                <div>
+                    <h2>Occudivation: {props.occupation}</h2>
                     <h2>Salary: {props.salary}</h2>
-                </p>
+                </div>
             </div>
         </div>
     );
