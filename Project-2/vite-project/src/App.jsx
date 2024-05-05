@@ -1,9 +1,24 @@
 import React from "react";
 import './App.css';
+import Card from './Components/Card.jsx'
+import database from './Database/info.js'
 
-function App(props) {
+function App() {
+    const dataElements = database.map((item) => {
+        return <Card img={item.img} name={item.name} occupation={item.occupation} salary={item.salary} />
+    });
+
     return (
-        <div className="card">
+        <>
+            {dataElements}
+        </>
+        
+    );
+}
+
+export default App;
+
+/*  <div className="card">
             <div className="image_sec">
                 <img src={props.img} alt={props.name} />
             </div>
@@ -14,8 +29,4 @@ function App(props) {
                     <h2>Salary: {props.salary}</h2>
                 </p>
             </div>
-        </div>
-    );
-}
-
-export default App;
+    </div> */

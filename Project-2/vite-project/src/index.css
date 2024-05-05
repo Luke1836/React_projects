@@ -13,8 +13,6 @@ body {
     width: 60%;
     margin: auto;
     background-color: papayawhip;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
 }
 
 #root {
@@ -24,4 +22,10 @@ body {
     align-items: center;
     justify-content: center;
     gap: 1rem;
+}
+
+@media  screen and (max-width: 768px) {
+    body {
+        width: 100%;
+    }
 }
