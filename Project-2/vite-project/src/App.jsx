@@ -4,7 +4,6 @@ import Card from './Components/Card.jsx'
 import database from './Database/info.js'
 
 function App() {
-    
     const dataElements = database.map((item) => {
         return <Card 
                     key={item.id} 
