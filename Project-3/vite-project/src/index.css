@@ -14,12 +14,16 @@ body {
 
 input {
   display: inline;
-  width: 250px;
+  width: 300px;
   height: 30px;
   padding: 4px;
   border: 2px solid purple;
   border-radius: 6px;
   font-size: 1rem;
+}
+
+label {
+  font-weight: 600;
 }
 
 /* ---------END OF GENERAL STYLES----------- */
@@ -46,19 +50,22 @@ input {
 }
 
 .hero {
+    width: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
     color: #222;
     min-height: 40vh;
-    
+    gap: 2rem;
+
     .form {
-      display: flex;
-      flex-flow: column;
+      display: inline-flex;
+      flex-flow: column nowrap;
       align-items: center;
       justify-content: center;
       gap: 4px;
+      margin-right: 6rem;
     }
 }
 
@@ -67,6 +74,15 @@ input {
     padding: 0.5rem;
     .logo {
       font-size: 1.25rem;
+    }
+  }
+
+  .hero {
+    .form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0;
     }
   }
 }
