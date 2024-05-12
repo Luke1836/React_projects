@@ -17,4 +17,29 @@ body {
 .header {
   height: 12vh;
   background-image: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: whitesmoke;
+
+  .logo {
+    font-size: 1.75rem;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .header {
+    padding: 0.5rem;
+    .logo {
+      font-size: 1.25rem;
+    }
+  }
 }
