@@ -1,0 +1,20 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------GENERAL STYLES----------- */
+body {
+    min-height: 100vh;
+    width: 100%;
+    color: #FFF;
+}
+
+/* ---------END OF GENERAL STYLES----------- */
+
+.header {
+  height: 12vh;
+  background-image: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+}
