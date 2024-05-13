@@ -26,9 +26,13 @@ label {
   font-weight: 600;
 }
 
+img {
+  margin: 0;
+}
 /* ---------END OF GENERAL STYLES----------- */
 
 .header {
+  width: 100%;
   height: 12vh;
   background-image: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
   display: flex;
@@ -71,18 +75,26 @@ label {
 
 @media screen and (max-width: 580px) {
   .header {
-    padding: 0.5rem;
+    padding: 0;
+    margin: 0;
+    justify-content: space-evenly;
     .logo {
       font-size: 1.25rem;
     }
   }
 
   .hero {
+    gap: 0.5rem;
+
     .form {
       display: flex;
       align-items: center;
       justify-content: center;
       margin-right: 0;
     }
+  }
+
+  input {
+    width: 300px;
   }
 }
