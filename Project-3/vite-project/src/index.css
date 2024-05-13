@@ -87,6 +87,11 @@ button {
       background-image: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
       color: whitesmoke;
     }
+
+    .generator:active {
+      width: 390px;
+      height: 38px;
+    }
 }
 
 .input-container {
@@ -130,6 +135,11 @@ button {
 
     .generator {
       width: 240px;
+    }
+
+    .generator:active {
+      width: 230px;
+      height: 38px;
     }
   }
 

@@ -1,4 +1,12 @@
 import React from "react";
+import memeData from '../Database/info.js';
+
+function memeGenerator() {
+    const memes = memeData.data.memes;
+    const MemeNumber = Math.floor((Math.random() * memes.length));
+    const randomMeme = memes[MemeNumber];
+    console.log(randomMeme);
+}
 
 function Body() {
     return (
@@ -16,7 +24,7 @@ function Body() {
             </div>
 
             <div className="buttons">
-                <button type="button" className="generator"><span>Get a new meme image</span><img src="../Public/Geneartor.png" /></button>
+                <button type="button" className="generator" onClick={memeGenerator}><span>Get a new meme image</span><img src="../Public/Geneartor.png" /></button>
             </div>
         </div>
     );
