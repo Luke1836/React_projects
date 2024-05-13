@@ -29,6 +29,11 @@ label {
 img {
   margin: 0;
 }
+
+button {
+  cursor: pointer;
+}
+
 /* ---------END OF GENERAL STYLES----------- */
 
 .header {
@@ -54,13 +59,44 @@ img {
 }
 
 .hero {
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+
+    .buttons {
+      width: 100%;
+      height: 10vh;
+      text-align: center;
+      display: grid;
+      place-items: center;
+    }
+
+    .generator {
+      width: 400px;
+      height: 40px;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background-image: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+      color: whitesmoke;
+    }
+}
+
+.input-container {
     width: 100%;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-evenly;
     align-items: center;
     color: #222;
-    min-height: 40vh;
+    min-height: 20vh;
     gap: 2rem;
 
     .form {
@@ -69,7 +105,6 @@ img {
       align-items: center;
       justify-content: center;
       gap: 4px;
-      margin-right: 6rem;
     }
 }
 
@@ -83,15 +118,21 @@ img {
     }
   }
 
+  .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+  }
+
   .hero {
     gap: 0.5rem;
 
-    .form {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 0;
+    .generator {
+      width: 240px;
     }
+
+
   }
 
   input {

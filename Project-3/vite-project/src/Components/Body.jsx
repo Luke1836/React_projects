@@ -14,6 +14,10 @@ function Body() {
                     <input type="text" placeholder="Enter" id="btext" name="btext" />
                 </div>
             </div>
+
+            <div className="buttons">
+                <button type="button" className="generator"><span>Get a new meme image</span><img src="../Public/Geneartor.png" /></button>
+            </div>
         </div>
     );
 }
