@@ -30,8 +30,8 @@ function Body() {
                 </div>
             </div>
             
-            <div className="memes-container">
-                <img src={memeImage} loading="lazy"/>
+            <div className="memes-container inactive">
+                <img src={memeImage} loading="eager" />
             </div>
         </div>
     );

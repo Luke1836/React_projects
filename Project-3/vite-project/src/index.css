@@ -34,6 +34,14 @@ button {
   cursor: pointer;
 }
 
+.inactive {
+  visibility: hidden;
+}
+
+.active {
+  visibility: visible;
+}
+
 /* ---------END OF GENERAL STYLES----------- */
 
 .header {
