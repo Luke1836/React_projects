@@ -8,6 +8,8 @@ function Body() {
         const memes = memeData.data.memes;
         const MemeNumber = Math.floor((Math.random() * memes.length));
         setmemeImage(memes[MemeNumber].url);    //Since we don't care about the previous state of the state variable
+        const memeContainer = document.querySelector(".memes-container");
+        memeContainer.classList.remove('inactive');
     }
 
     return (
