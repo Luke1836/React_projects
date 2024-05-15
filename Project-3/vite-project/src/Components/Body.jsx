@@ -2,8 +2,7 @@ import React, {useState} from "react";
 import memeData from '../Database/info.js';
 
 function Body() {
-
-    const [memeImage, setmemeImage] = useState("");
+    const [memeImage, setmemeImage] = useState("http://i.imgflip.com/1bij.jpg");
     function memeGenerator() {
         const memes = memeData.data.memes;
         const MemeNumber = Math.floor((Math.random() * memes.length));
