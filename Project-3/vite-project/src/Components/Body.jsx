@@ -13,7 +13,13 @@ function Body() {
     function memeGenerator() {
         const memes = memeData.data.memes;
         const MemeNumber = Math.floor((Math.random() * memes.length));
-        setMemeImage(memes[MemeNumber].url);    //Since we don't care about the previous state of the state variable
+        const url = memes[MemeNumber].url
+        setMemeImage(prevState => {
+            return {
+                ...prevState,
+                randomImage: url
+            }  
+        });
         const memeContainer = document.querySelector(".memes-container");
         memeContainer.classList.remove('inactive');
     }
@@ -39,7 +45,7 @@ function Body() {
             </div>
             
             <div className="memes-container inactive">
-                <img src={memeImage} loading="eager" />
+                <img src={memeImage.randomImage} loading="eager" />
             </div>
         </div>
     );
