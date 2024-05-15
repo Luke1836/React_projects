@@ -2,11 +2,18 @@ import React, {useState} from "react";
 import memeData from '../Database/info.js';
 
 function Body() {
-    const [memeImage, setmemeImage] = useState("http://i.imgflip.com/1bij.jpg");
+    //State for Meme Images
+    const [memeImage, setMemeImage] = useState({
+                topText: "",
+                bottomText: "",
+                randomImage: "http://i.imgflip.com/1bij.jpg"
+    });
+
+    const [allMemeImages, setAllMemeImages] = useState(memeData); 
     function memeGenerator() {
         const memes = memeData.data.memes;
         const MemeNumber = Math.floor((Math.random() * memes.length));
-        setmemeImage(memes[MemeNumber].url);    //Since we don't care about the previous state of the state variable
+        setMemeImage(memes[MemeNumber].url);    //Since we don't care about the previous state of the state variable
         const memeContainer = document.querySelector(".memes-container");
         memeContainer.classList.remove('inactive');
     }
