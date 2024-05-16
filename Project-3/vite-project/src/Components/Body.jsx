@@ -14,12 +14,13 @@ function Body() {
         const memes = memeData.data.memes;
         const MemeNumber = Math.floor((Math.random() * memes.length));
         const url = memes[MemeNumber].url
-        setMemeImage(prevState => {
-            return {
+        setMemeImage(prevState => (
+            {
                 ...prevState,
                 randomImage: url
-            }  
-        });
+            }
+            )//Implicit return property
+        );
         const memeContainer = document.querySelector(".memes-container");
         memeContainer.classList.remove('inactive');
     }
