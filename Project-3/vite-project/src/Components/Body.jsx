@@ -9,7 +9,9 @@ function Body() {
                 randomImage: "http://i.imgflip.com/1bij.jpg"
     });
 
-    const [allMemeImages, setAllMemeImages] = useState(memeData); 
+    const [allMemeImages, setAllMemeImages] = useState(memeData);
+    
+    //Genarating random meme images
     function memeGenerator() {
         const memes = memeData.data.memes;
         const MemeNumber = Math.floor((Math.random() * memes.length));
@@ -20,7 +22,7 @@ function Body() {
                 randomImage: url
             }
             )//Implicit return property
-        );
+        );z
         const memeContainer = document.querySelector(".memes-container");
         memeContainer.classList.remove('inactive');
     }
