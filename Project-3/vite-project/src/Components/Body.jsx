@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import memeData from '../Database/info.js';
+import Button from "./Button.jsx";
 
 function Body() {
     //State for Meme Images
