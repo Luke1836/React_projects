@@ -43,7 +43,7 @@ function Body() {
                 </div>
 
                 <div className="buttons">
-                    <button type="button" className="generator" onClick={memeGenerator}><span>Get a new meme image</span><img src="../Public/Geneartor.png" /></button>
+                    
                 </div>
             </div>
             
