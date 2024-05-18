@@ -23,7 +23,7 @@ function Body() {
                 randomImage: url
             }
             )//Implicit return property
-        );z
+        );
         const memeContainer = document.querySelector(".memes-container");
         memeContainer.classList.remove('inactive');
     }
@@ -44,7 +44,7 @@ function Body() {
                 </div>
 
                 <div className="buttons">
-                    
+                    <Button memeGenerator={memeGenerator} />
                 </div>
             </div>
             
