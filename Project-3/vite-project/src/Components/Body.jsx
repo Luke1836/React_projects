@@ -3,7 +3,7 @@ import memeData from '../Database/info.js';
 import Button from "./Button.jsx";
 
 function Body() {
-    
+
     //State for Meme Images
     const [memeImage, setMemeImage] = useState({
                 topText: "",
@@ -23,7 +23,7 @@ function Body() {
                 ...prevState,
                 randomImage: url
             }
-            )//Implicit return property
+            )   //Implicit return property
         );
         const memeContainer = document.querySelector(".memes-container");
         memeContainer.classList.remove('inactive');
