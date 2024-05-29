@@ -15,7 +15,7 @@ function Body() {
     
     //Genarating random meme images
     function memeGenerator() {
-        const memes = memeData.data.memes;
+        const memes = allMemeImages.data.memes;
         const MemeNumber = Math.floor((Math.random() * memes.length));
         const url = memes[MemeNumber].url
         setMemeImage(prevState => (
