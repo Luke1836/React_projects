@@ -1,11 +1,33 @@
-import React from "react";
+import React, {useState} from "react";
 
 function Forms()
 {
 
+    const [formData, setFormData] = useState({
+        email: "",
+        password: "",
+        passwordConfirm: "",
+        joinedNewsletter: true
+    });
+
+
+    function handleChange(event) {
+        const {name, value, checked, type} = event.target;
+        setFormData((prevState) => ({
+            ...prevState,
+            [name]: type === "checkbox" ? checked : value
+        }))
+        
+    }    
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        
+    }
+
     return (
         <div className="formContainer">
-            <form onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmit}>
                 <input 
                     type="email"
                     placeholder="Email Address"
