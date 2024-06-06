@@ -22,11 +22,11 @@ function Forms()
 
     function handleSubmit(event) {
         event.preventDefault();
-        
+
     }
 
     return (
-        <div className="formContainer">
+        <div className="form-container">
             <form className="form" onSubmit={handleSubmit}>
                 <input 
                     type="email"
@@ -57,7 +57,7 @@ function Forms()
                     <label htmlFor="okayToEmail">I want to join the newsletter</label>
                 </div>
                 
-                <button className="form--submit">
+                <button className="form-submit">
                     Sign up
                 </button>
             </form>
