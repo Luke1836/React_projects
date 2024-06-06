@@ -27,7 +27,7 @@ function Forms()
             console.log("Passwords are matching");
         else {
             console.log("Passwords aren't matching");
-            return;
+            return; //If the passwords donot match
         }
 
         if(formData.joinedNewsletter)
