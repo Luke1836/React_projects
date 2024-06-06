@@ -25,8 +25,10 @@ function Forms()
 
         if(formData.password === formData.passwordConfirm)
             console.log("Passwords are matching");
-        else 
+        else {
             console.log("Passwords aren't matching");
+            return;
+        }
 
         if(formData.joinedNewsletter)
             console.log("You have requested to join the newletter.");
