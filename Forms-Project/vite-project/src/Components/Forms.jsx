@@ -17,12 +17,19 @@ function Forms()
             ...prevState,
             [name]: type === "checkbox" ? checked : value
         }))
-        
+        console.log(formData)   //Checking
     }    
 
     function handleSubmit(event) {
         event.preventDefault();
 
+        if(formData.password === formData.passwordConfirm)
+            console.log("Passwords are matching");
+        else 
+            console.log("Passwords aren't matching");
+
+        if(formData.joinedNewsletter)
+            console.log("You have requested to join the newletter.");
     }
 
     return (
@@ -44,6 +51,15 @@ function Forms()
                     name="password"
                     onChange={handleChange}
                     value={FormData.password}
+                />
+
+                <input 
+                    type="password"
+                    placeholder="Confirm Password"
+                    className="form-input"
+                    name="passwordConfirm"
+                    onChange={handleChange}
+                    value={FormData.passwordConfirm}
                 />
 
                 <div className="form--marketing">
