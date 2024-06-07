@@ -73,3 +73,7 @@ fieldset {
   align-items: center;
   justify-content: center;
 }
+
+input[type="checkbox"], input[type="radio"] {
+  margin-right: 0.5rem;
+}
