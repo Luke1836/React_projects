@@ -7,7 +7,8 @@ function Forms()
         email: "",
         password: "",
         passwordConfirm: "",
-        joinedNewsletter: true
+        joinedNewsletter: true,
+        articleChosen: ""
     });
 
 
@@ -75,6 +76,43 @@ function Forms()
                     <label htmlFor="okayToEmail">I want to join the newsletter</label>
                 </div>
                 
+                <fieldset>
+                    <legend>Choose an article</legend>
+                    <input
+                        type="radio"
+                        id="MetroPlus"
+                        name="articleChosen"
+                        value="MetroPlus"
+                        onChange={handleChange}
+                        checked={formData.articleChosen === "MetroPlus"}
+                    />
+                    <label htmlFor="MetroPlus">Metro Plus</label>
+                    <br />
+
+                    <input
+                        type="radio"
+                        id="FinancialTimes"
+                        name="articleChosen"
+                        value="FinancialTimes"
+                        onChange={handleChange}
+                        checked={formData.articleChosen === "FinancialTimes"}
+                    />
+                    <label htmlFor="MetroPlus">Financial Times and Business Plus</label>
+                    <br />
+
+                    <input
+                        type="radio"
+                        id="PropertyPlus"
+                        name="articleChosen"
+                        value="PropertyPlus"
+                        onChange={handleChange}
+                        checked={formData.articleChosen === "PropertyPlus"}
+                    />
+                    <label htmlFor="MetroPlus">Properties Plus</label>
+                    <br />
+
+                </fieldset>
+
                 <button className="form-submit">
                     Sign up
                 </button>

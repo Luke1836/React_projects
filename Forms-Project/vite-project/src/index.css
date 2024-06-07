@@ -63,3 +63,13 @@ body {
 .form--marketing > input {
   margin-right: 10px;
 }
+
+legend {
+  display: none;
+}
+
+fieldset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
