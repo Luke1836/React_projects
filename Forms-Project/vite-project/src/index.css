@@ -27,8 +27,8 @@ body {
 .form {
   background-color: white;
   padding: 50px;
-  padding-left: 75px;
-  padding-right: 75px;
+  padding-left: 70px;
+  padding-right: 70px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -76,6 +76,8 @@ fieldset {
   width: 100%;
   margin: 0;
   padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.75);
 }
 
 input[type="checkbox"], input[type="radio"] {
