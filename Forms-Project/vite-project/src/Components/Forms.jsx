@@ -97,7 +97,7 @@ function Forms()
                         onChange={handleChange}
                         checked={formData.articleChosen === "FinancialTimes"}
                     />
-                    <label htmlFor="MetroPlus">Financial Times and Business Plus</label>
+                    <label htmlFor="FinancialTimes">Financial Times and Business Plus</label>
                     <br />
 
                     <input
@@ -108,7 +108,7 @@ function Forms()
                         onChange={handleChange}
                         checked={formData.articleChosen === "PropertyPlus"}
                     />
-                    <label htmlFor="MetroPlus">Properties Plus</label>
+                    <label htmlFor="PropertyPlus">Properties Plus</label>
                     <br />
 
                 </fieldset>
