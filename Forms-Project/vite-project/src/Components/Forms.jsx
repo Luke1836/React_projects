@@ -97,7 +97,18 @@ function Forms()
                         onChange={handleChange}
                         checked={formData.articleChosen === "FinancialTimes"}
                     />
-                    <label htmlFor="FinancialTimes">Financial Times and Business Plus</label>
+                    <label htmlFor="FinancialTimes">Financial Times</label>
+                    <br />
+
+                    <input
+                        type="radio"
+                        id="BusinessPlus"
+                        name="articleChosen"
+                        value="BusinessPlus"
+                        onChange={handleChange}
+                        checked={formData.articleChosen === "BusinessPlus"}
+                    />
+                    <label htmlFor="FinancialTimes">Business Plus</label>
                     <br />
 
                     <input
