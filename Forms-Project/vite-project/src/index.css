@@ -27,6 +27,8 @@ body {
 .form {
   background-color: white;
   padding: 50px;
+  padding-left: 75px;
+  padding-right: 75px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -64,14 +66,16 @@ body {
   margin-right: 10px;
 }
 
-legend {
-  display: none;
+p {
+  color: rgb(22, 0, 70);
+  margin-bottom: 4px;
 }
 
 fieldset {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding-right: 30px;
+  width: 100%;
+  margin: 0;
+  padding: 5px;
 }
 
 input[type="checkbox"], input[type="radio"] {

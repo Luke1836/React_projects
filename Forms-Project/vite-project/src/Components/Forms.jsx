@@ -76,8 +76,8 @@ function Forms()
                     <label htmlFor="okayToEmail">I want to join the newsletter</label>
                 </div>
                 
+                <p>Choose a supplement</p>
                 <fieldset>
-                    <legend>Choose an article</legend>
                     <input
                         type="radio"
                         id="MetroPlus"
