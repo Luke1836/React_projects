@@ -60,8 +60,8 @@ function Body() {
             
             <div className="memes-container inactive">
                 <img src={memeImage.randomImage} loading="eager" />
-                <h2 className="meme--text top">One does not simply</h2>
-                <h2 className="meme--text bottom">Walk into Mordor</h2>
+                <h2 className="meme--text top">{memeImage.topText}</h2>
+                <h2 className="meme--text bottom">{memeImage.bottomText}</h2>
             </div>
         </div>
     );
