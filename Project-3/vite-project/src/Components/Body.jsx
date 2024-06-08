@@ -59,7 +59,7 @@ function Body() {
             </div>
             
             <div className="memes-container inactive">
-                <img src={memeImage.randomImage} loading="eager" />
+                <img src={memeImage.randomImage} loading="eager" className="meme-image"/>
                 <h2 className="meme--text top">{memeImage.topText}</h2>
                 <h2 className="meme--text bottom">{memeImage.bottomText}</h2>
             </div>
