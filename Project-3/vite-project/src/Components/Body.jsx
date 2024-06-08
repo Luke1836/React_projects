@@ -29,18 +29,27 @@ function Body() {
         memeContainer.classList.remove('inactive');
     }
 
+    function handleChanges(event) {
+        const {name, value} = event.target;
+        setMemeImage(prevState => ({
+            ...prevState,
+            [name]: value
+        }))
+        console.log(memeImage);
+    }
+
     return (
         <div className="hero">
             <div className="initial-section">
                 <div className="input-container">
                     <div className="form">
                         <label htmlFor="ttext">Top Text</label>
-                        <input type="text" placeholder="Enter" id="ttext" name="ttext" />
+                        <input type="text" placeholder="Enter" id="ttext" name="topText" onChange={handleChanges} value={memeImage.topText} />
                     </div>
                     
                     <div className="form">
                         <label htmlFor="btext">Bottom Text</label>
-                        <input type="text" placeholder="Enter" id="btext" name="btext" />
+                        <input type="text" placeholder="Enter" id="btext" name="bottomText" onChange={handleChanges} value={memeImage.bottomText} />
                     </div>
                 </div>
 
