@@ -7,12 +7,20 @@
 
 /* ---------- VARIABLES ---------- */
 :root {
-  --bgcolor: whitesmoke,
+  --bgcolor: papayawhip;
+  --bodycolor: whitesmoke;
 }
 
 
 /* ---------- GENERAL STYLINGS ---------- */
+html {
+  background-color: var(--bgcolor);
+  scroll-behavior: smooth;
+}
+
 body {
-  width: 100%;
+  width: 80%;
   min-height: 100vh;
+  margin: 0 auto;
+  background-color: var(--bodycolor);
 }
