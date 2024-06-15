@@ -24,3 +24,8 @@ body {
   margin: 0 auto;
   background-color: var(--bodycolor);
 }
+
+img {
+  display: block;
+  width: 100%;
+}
