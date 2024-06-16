@@ -29,3 +29,9 @@ img {
   display: block;
   width: 100%;
 }
+
+figcaption {
+  display: none;
+  position: absolute;
+  top: -999999;
+}
