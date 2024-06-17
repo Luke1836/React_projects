@@ -32,6 +32,4 @@ img {
 
 figcaption {
   display: none;
-  position: absolute;
-  top: -999999;
 }
