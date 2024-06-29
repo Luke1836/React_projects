@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import memeData from '../Database/info.js';
 import Button from "./Button.jsx";
 
