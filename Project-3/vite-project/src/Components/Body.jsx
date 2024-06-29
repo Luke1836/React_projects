@@ -19,7 +19,7 @@ function Body() {
         .then(data => setAllMemeImages(data.data.memes))
     }, []); //So we don't have any elements in the dependencies array as we are only calling it once when the component is rendered
 
-    console.log(allMemeImages);
+
     //Genarating random meme images
     function memeGenerator() {
         const MemeNumber = Math.floor((Math.random() * allMemeImages.length));
