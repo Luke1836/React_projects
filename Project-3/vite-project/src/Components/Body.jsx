@@ -21,7 +21,7 @@ function Body() {
 
     //console.log(allMemeImages);
 
-    //Genarating random meme images
+    //Generating random meme images
     function memeGenerator() {
         const MemeNumber = Math.floor((Math.random() * allMemeImages.length));
         const url = allMemeImages[MemeNumber].url
