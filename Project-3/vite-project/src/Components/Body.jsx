@@ -13,6 +13,12 @@ function Body() {
 
     const [allMemeImages, setAllMemeImages] = useState(memeData);
     
+    useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+        .then()
+    }, []); //So we don't have any elements in the dependencies array as we are only calling it once when the component is renderes
+
+
     //Genarating random meme images
     function memeGenerator() {
         const memes = allMemeImages.data.memes;
