@@ -22,9 +22,8 @@ function Body() {
     console.log(allMemeImages);
     //Genarating random meme images
     function memeGenerator() {
-        const memes = allMemeImages;
-        const MemeNumber = Math.floor((Math.random() * memes.length));
-        const url = memes[MemeNumber].url
+        const MemeNumber = Math.floor((Math.random() * allMemeImages.length));
+        const url = allMemeImages[MemeNumber].url
         setMemeImage(prevState => (
             {
                 ...prevState,
