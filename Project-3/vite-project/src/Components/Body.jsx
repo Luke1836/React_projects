@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import memeData from '../Database/info.js';
 import Button from "./Button.jsx";
 
 function Body() {
@@ -11,17 +10,19 @@ function Body() {
                 randomImage: "http://i.imgflip.com/1bij.jpg"
     });
 
-    const [allMemeImages, setAllMemeImages] = useState(memeData);
+    const [allMemeImages, setAllMemeImages] = useState([]);
     
+    //Side Effect Making API calls to fetch data
     useEffect(() => {
         fetch("https://api.imgflip.com/get_memes")
-        .then()
-    }, []); //So we don't have any elements in the dependencies array as we are only calling it once when the component is renderes
+        .then(res => res.json())
+        .then(data => setAllMemeImages(data.data.memes))
+    }, []); //So we don't have any elements in the dependencies array as we are only calling it once when the component is rendered
 
-
+    console.log(allMemeImages);
     //Genarating random meme images
     function memeGenerator() {
-        const memes = allMemeImages.data.memes;
+        const memes = allMemeImages;
         const MemeNumber = Math.floor((Math.random() * memes.length));
         const url = memes[MemeNumber].url
         setMemeImage(prevState => (
