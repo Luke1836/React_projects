@@ -13,8 +13,8 @@ function Navbar() {
                     <dd>About</dd>
                     <dd>Contact</dd>
                     <dd>Services</dd>
-                    <dd><Button /></dd>
                 </dl>
+                <Button />
             </nav>
         </div>
     );

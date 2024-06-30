@@ -42,6 +42,7 @@ html {
     dd {
         color: whitesmoke;
         font-size: 1.55rem; 
+        padding-left: 0.75rem;
     }
 }
 
@@ -63,22 +64,23 @@ html {
     outline: solid #003e8f 3px;
     position: relative;
 
-    .light {
+    .light, .dark {
         border-radius: 10px;
         width: 40px;
         height: 32px;
         position: absolute;
-        top: 0%;
+        display: grid;
+        place-content: center;
+    }
+
+    .light {
+        top: -10%;
         left: 0%;
     }
 
     .dark {
-        border-radius: 10px;
-        position: absolute;
-        top: 0%;
+        top: -10%;
         left: 50%;
-        width: 40px;
-        height: 32px;
     }
 
     .slider {
