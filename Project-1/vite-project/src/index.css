@@ -54,7 +54,47 @@ html {
     opacity: 0.25;
 }
 
+.button {
+    width: 80px;
+    background-color: white;
+    height: 32px;
+    border-radius: 60px;
+    border: 3px solid #333;
+    outline: solid #003e8f 3px;
+    position: relative;
 
+    .light {
+        border-radius: 10px;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+    }
+
+    .dark {
+        border-radius: 10px;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        width: 40px;
+        height: 32px;
+    }
+
+    .slider {
+        background-color: #003e8f;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        border-radius: 13px;
+        width: 40px;
+        height: 32px;
+    }
+}
+
+.active {
+    left: 50%;
+}
 
 @media screen and (max-width: 500px) {
     .navbar {
