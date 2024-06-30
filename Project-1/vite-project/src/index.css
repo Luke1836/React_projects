@@ -54,6 +54,8 @@ html {
     opacity: 0.25;
 }
 
+
+
 @media screen and (max-width: 500px) {
     .navbar {
         padding: 1rem;

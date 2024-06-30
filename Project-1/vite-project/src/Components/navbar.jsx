@@ -1,6 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact } from '@fortawesome/free-brands-svg-icons';
+import Button from './Button';
 
 function Navbar() {
     return (
@@ -13,6 +14,7 @@ function Navbar() {
                     <dd>Contact</dd>
                     <dd>Services</dd>
                 </dl>
+                <Button />
             </nav>
         </div>
     );
