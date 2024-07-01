@@ -24,6 +24,29 @@ html {
     height: 20vh;
 }
 
+.lightMode {
+    background-color: #DDD;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+
+    dl {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 40vw;
+    }
+    
+    dd {
+        color: #333;
+        font-size: 1.55rem; 
+        padding-left: 0.75rem;
+    }
+}
+
 .navbar {
     padding: 1.5rem;
     display: flex;
@@ -91,11 +114,15 @@ html {
         border-radius: 12px;
         width: 40px;
         height: 27px;
+        cursor: pointer;
+        transition-property: all;
+        transition-duration: 0.25s;
+        transition-timing-function: ease-in-out;
     }
 }
 
-.active {
-    left: 50%;
+.button .slider.active {  
+    left: calc(100% - 40px);
 }
 
 @media screen and (max-width: 500px) {
