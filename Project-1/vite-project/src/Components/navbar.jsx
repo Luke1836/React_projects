@@ -14,7 +14,7 @@ function Navbar(props) {
             <dd>Contact</dd>
             <dd>Services</dd>
           </dl>
-          <Button toggleDarkMode={props.toggleDarkMode} sliderRef={props.sliderRef}/>
+          <Button toggleDarkMode={props.toggleDarkMode} sliderRef={props.sliderRef} />
         </nav>
       </div>
     );
