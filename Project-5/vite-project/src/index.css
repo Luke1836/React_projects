@@ -17,3 +17,7 @@ body {
     width: 100%;
     background-color: var(--bgcolor);
 }
+
+img {
+    display: block;
+}
