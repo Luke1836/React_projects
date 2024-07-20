@@ -9,8 +9,10 @@
 /* ----------- Variables ---------- */
 :root {
     --bgcolor: #0B2434;
-    --boxcolor: #F6F6F6;
-    --box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25) 
+    --boxcolor: #F8F8F8;
+    --box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    --die-color: white;
+    --fs: 2rem;
 }
 
 
@@ -37,6 +39,7 @@ img {
     width: 90vw;
     min-width: 350px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .dice-container {
@@ -56,4 +59,9 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.die-num {
+    background-color: var(--die-color);
+    font-size: var(--fs);
 }
