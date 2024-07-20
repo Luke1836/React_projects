@@ -5,11 +5,13 @@
     box-sizing: border-box;
 }
 
+
 /* ----------- Variables ---------- */
 :root {
-    --bgcolor: #ddd;
-    --boxcolor: #fff;
+    --bgcolor: #0B2434;
+    --boxcolor: #F5F5F5;
 }
+
 
 /* ---------- General Styles ---------- */
 body {
