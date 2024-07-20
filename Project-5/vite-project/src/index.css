@@ -9,7 +9,7 @@
 /* ----------- Variables ---------- */
 :root {
     --bgcolor: #0B2434;
-    --boxcolor: #F5F5F5;
+    --boxcolor: #F6F6F6;
 }
 
 
@@ -18,8 +18,22 @@ body {
     min-height: 100vh;
     width: 100%;
     background-color: var(--bgcolor);
+    padding: 25px;
+    display: grid;
+    place-content: center;
 }
 
 img {
     display: block;
+}
+
+/* ---------- End of General Styles ---------- */
+
+
+.main {
+    background-color: var(--boxcolor);
+    height: 90vh;
+    width: 90vw;
+    min-width: 350px;
+    border-radius: 10px;
 }
