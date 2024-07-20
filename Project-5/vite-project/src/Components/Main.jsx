@@ -1,21 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
 import Die from "./Die";
 
 function Main() {
+
+    const [dice, setDice] = useState(allNewDice());
+
+    function allNewDice() {
+        const newDice = [];
+        for(let i = 0 ; i < 10 ; i++)
+            newDice.push(Math.ceil(Math.random() * 6));
+
+        return newDice;
+    }
+
+    const diceElements = dice.map(die => <Die value={die} />);
+
     return (
         <main className="main">
             <div className="dice-container">
-                <Die value="1" />
-                <Die value="2" />
-                <Die value="3" />
-                <Die value="4" />
-                <Die value="5" />
-                <Die value="6" />
-                <Die value="1" />
-                <Die value="1" />
-                <Die value="1" />
-                <Die value="1" />
+                {diceElements}
             </div>
+            <button>
+                Roll
+            </button>
         </main>
     )
 }
