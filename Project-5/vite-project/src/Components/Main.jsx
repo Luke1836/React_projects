@@ -4,7 +4,18 @@ import Die from "./Die";
 function Main() {
     return (
         <main className="main">
-            <Die />
+            <div className="grid-box">
+                <Die value="1" />
+                <Die value="1" />
+                <Die value="1" />
+                <Die value="1" />
+                <Die value="1" />
+                <Die value="1" />
+                <Die value="1" />
+                <Die value="1" />
+                <Die value="1" />
+                <Die value="1" />
+            </div>
         </main>
     )
 }
