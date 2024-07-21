@@ -87,3 +87,11 @@ img {
     border-radius: 6px;
     box-shadow: var(--box-shadow);
 }
+
+.roll-btn:focus {
+    outline: none;
+}
+
+.roll-btn:active {
+    box-shadow: inset 3px 3px 8px -2px rgba(0, 0, 0, 0.75);
+}
