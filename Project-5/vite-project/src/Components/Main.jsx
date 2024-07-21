@@ -8,12 +8,16 @@ function Main() {
     function allNewDice() {
         const newDice = [];
         for(let i = 0 ; i < 10 ; i++)
-            newDice.push(Math.ceil(Math.random() * 6));
+            newDice.push({
+                value: Math.ceil(Math.random() * 6),
+                id: i,
+                isHeld: false
+            });
 
         return newDice;
     }
 
-    const diceElements = dice.map(die => <Die value={die} />);
+    const diceElements = dice.map(die => <Die value={die.value} />);
 
     function rollDice() {
         setDice(allNewDice());
