@@ -19,6 +19,7 @@
     --btn-color: #5035FF;
     --ff-color: whitesmoke;
     --ff: "Mukta", sans-serif;
+    --underline: #15f4e9;
 }
 
 
@@ -35,6 +36,14 @@ body {
 
 img {
     display: block;
+}
+
+.underline {
+    width: 70px;
+    height: 6px;
+    background-color: var(--underline);
+    margin: auto;
+    border-radius: 10px;
 }
 
 /* ---------- End of General Styles ---------- */
@@ -107,6 +116,7 @@ img {
 }
 
 .p-description {
+    padding-top: 1.1rem;
     font-size: 1.1rem;
     width: 320px;
     line-height: 1.25;
