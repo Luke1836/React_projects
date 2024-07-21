@@ -14,7 +14,6 @@
     --bgcolor: #0B2434;
     --boxcolor: #F8F8F8;
     --box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25);
-    --die-color: white;
     --fs: 2rem;
     --fs-sm: 1.25rem;
     --btn-color: #5035FF;
@@ -70,7 +69,6 @@ img {
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    background-color: var(--die-color);
 }
 
 .die-num {
