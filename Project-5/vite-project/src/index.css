@@ -1,4 +1,7 @@
 
+/* ---------- Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -16,6 +19,7 @@
     --fs-sm: 1.25rem;
     --btn-color: #5035FF;
     --ff-color: whitesmoke;
+    --ff: "Mukta", sans-serif;
 }
 
 
@@ -27,6 +31,7 @@ body {
     padding: 25px;
     display: grid;
     place-content: center;
+    font-family: var(--ff);
 }
 
 img {
@@ -65,10 +70,10 @@ img {
     align-items: center;
     justify-content: center;
     border-radius: 8px;
+    background-color: var(--die-color);
 }
 
 .die-num {
-    background-color: var(--die-color);
     font-size: var(--fs);
 }
 
