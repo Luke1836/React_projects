@@ -14,14 +14,19 @@ function Main() {
         }))
     }
 
+    function generateNewDie() {
+        return ({
+            value: Math.ceil(Math.random() * 6),
+            id: nanoid(),
+            isHeld: false
+        }
+
+        )
+    }
     function allNewDice() {
         const newDice = [];
         for(let i = 0 ; i < 10 ; i++)
-            newDice.push({
-                value: Math.ceil(Math.random() * 6),
-                id: nanoid(),
-                isHeld: false
-            });
+            newDice.push(generateNewDie()   );
 
         return newDice;
     }
@@ -34,7 +39,13 @@ function Main() {
             />);
 
     function rollDice() {
-        setDice(allNewDice());
+        setDice(oldDice => oldDice.map(die => {
+                return(
+                    die.isHeld ? die : generateNewDie()
+                )
+                //If a die is held meaning clicked and turned to green then we don't change it's state
+                //Otherwise we generate a new number for that die
+        }));
     }
 
     return (
