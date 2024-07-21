@@ -68,7 +68,7 @@ function Main() {
                 {diceElements}
             </div>
             <button onClick={rollDice} className="roll-btn">
-                Roll
+                {tenzies ? "New Game" : "Roll"}
             </button>
         </main>
     )
