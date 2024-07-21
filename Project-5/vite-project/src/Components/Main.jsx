@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Die from "./Die";
+import {nanoid} from "nanoid";
 
 function Main() {
 
@@ -10,7 +11,7 @@ function Main() {
         for(let i = 0 ; i < 10 ; i++)
             newDice.push({
                 value: Math.ceil(Math.random() * 6),
-                id: i,
+                id: nanoid(),
                 isHeld: false
             });
 
