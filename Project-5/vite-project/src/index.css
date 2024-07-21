@@ -95,3 +95,9 @@ img {
 .roll-btn:active {
     box-shadow: inset 3px 3px 8px -2px rgba(0, 0, 0, 0.75);
 }
+
+@media screen and (max-width: 500px) {
+    .dice-container {
+        gap: 1rem;
+    }
+}
