@@ -94,6 +94,25 @@ img {
     box-shadow: inset 3px 3px 8px -2px rgba(0, 0, 0, 0.75);
 }
 
+.hero {
+    padding: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.decript-header {
+    font-size: var(--fs);
+}
+
+.p-description {
+    font-size: 1.1rem;
+    width: 320px;
+    line-height: 1.25;
+    text-align: center;
+}
+
 @media screen and (max-width: 500px) {
     .dice-container {
         gap: 1rem;

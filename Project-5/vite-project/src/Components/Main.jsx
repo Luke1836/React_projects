@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Die from "./Die";
+import Description from "./Description";
 import {nanoid} from "nanoid";
 
 function Main() {
@@ -50,6 +51,7 @@ function Main() {
 
     return (
         <main className="main">
+            <Description />
             <div className="dice-container">
                 {diceElements}
             </div>
