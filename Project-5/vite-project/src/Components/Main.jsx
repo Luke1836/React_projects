@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import Die from "./Die";
 import Description from "./Description";
 import {nanoid} from "nanoid";
+import Confetti from "react-confetti"
 
 function Main() {
 
@@ -63,6 +64,7 @@ function Main() {
 
     return (
         <main className="main">
+            {tenzies && <Confetti />}
             <Description />
             <div className="dice-container">
                 {diceElements}
