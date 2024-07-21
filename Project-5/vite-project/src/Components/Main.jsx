@@ -18,7 +18,7 @@ function Main() {
         return newDice;
     }
 
-    const diceElements = dice.map(die => <Die value={die.value} />);
+    const diceElements = dice.map(die => <Die key={die.id} value={die.value} />);
 
     function rollDice() {
         setDice(allNewDice());
