@@ -53,13 +53,19 @@ function Main() {
             />);
 
     function rollDice() {
-        setDice(oldDice => oldDice.map(die => {
+        if(!tenzies) {
+            setDice(oldDice => oldDice.map(die => {
                 return(
                     die.isHeld ? die : generateNewDie()
                 )
                 //If a die is held meaning clicked and turned to green then we don't change it's state
                 //Otherwise we generate a new number for that die
         }));
+        }
+        else {
+            setTenzies(false);
+            setDice(allNewDice());
+        }
     }
 
     return (
