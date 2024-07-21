@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Die from "./Die";
 import Description from "./Description";
 import {nanoid} from "nanoid";
@@ -6,6 +6,18 @@ import {nanoid} from "nanoid";
 function Main() {
 
     const [dice, setDice] = useState(allNewDice());
+    const [tenzies, setTenzies] = useState(false);
+
+    useEffect(() => {
+        const allHeld = dice.every(die => die.isHeld);
+        const firstValue = dice[0].value;
+        const allSameValue = dice.every(die => die.value === firstValue);
+        if(allHeld && allSameValue) {
+            setTenzies(true);
+            console.log("You won!");
+        }
+    }, [dice])
+
 
     //When the die is clicked it changes it's state from not held ot being held.
     //Here we change the color of the die to #59E691
