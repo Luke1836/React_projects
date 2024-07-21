@@ -6,6 +6,14 @@ function Main() {
 
     const [dice, setDice] = useState(allNewDice());
 
+    //When the die is clicked it changes it's state from not held ot being held.
+    //Here we change the color of the die to #59E691
+    function holdChanges(id) {
+        setDice(oldDice => oldDice.map(die => {
+            return die.id === id ? {...die, isHeld: !(die.isHeld)} : die
+        }))
+    }
+
     function allNewDice() {
         const newDice = [];
         for(let i = 0 ; i < 10 ; i++)
@@ -18,7 +26,12 @@ function Main() {
         return newDice;
     }
 
-    const diceElements = dice.map(die => <Die key={die.id} value={die.value} isSelected={die.isHeld} />);
+    const diceElements = dice.map(die => 
+            <Die key={die.id} 
+                 value={die.value} 
+                 isSelected={die.isHeld} 
+                 handleChanges={() => holdChanges(die.id)} 
+            />);
 
     function rollDice() {
         setDice(allNewDice());

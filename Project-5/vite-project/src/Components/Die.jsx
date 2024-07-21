@@ -5,7 +5,7 @@ function Die(props) {
         backgroundColor: props.isSelected ? "#59E391" : "white"
     }
     return (
-        <div className="die-face" style={styles}>
+        <div className="die-face" style={styles} onClick={props.handleChanges}>
             <h2 className="die-num">{props.value}</h2>
         </div>
     )
