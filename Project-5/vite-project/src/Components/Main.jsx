@@ -78,6 +78,7 @@ function Main() {
             <button onClick={rollDice} className="roll-btn">
                 {tenzies ? "New Game" : "Roll"}
             </button>
+            
         </main>
     )
 }
