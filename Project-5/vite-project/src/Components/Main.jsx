@@ -70,6 +70,7 @@ function Main() {
         else {
             setTenzies(false);
             setDice(allNewDice());
+            count = 0;
         }
     }
 
