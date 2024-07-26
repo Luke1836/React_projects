@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Die from "./Die";
 import Description from "./Description";
+import Results from "./Results.jsx"
 import {nanoid} from "nanoid";
 import Confetti from "react-confetti"
 
@@ -8,14 +9,15 @@ function Main() {
 
     const [dice, setDice] = useState(allNewDice());
     const [tenzies, setTenzies] = useState(false);
+    let time = 0; //Keeps check of the total time taken to complete the game in seconds
+    let count = 0; //Counts the number of rolls taken to win the game
 
     useEffect(() => {
         const allHeld = dice.every(die => die.isHeld);
         const firstValue = dice[0].value;
         const allSameValue = dice.every(die => die.value === firstValue);
         if(allHeld && allSameValue) {
-            setTenzies(true);
-            console.log("You won!");
+            setTenzies(true);   //If every die is selected and we got the same number, we win the game
         }
     }, [dice])
 
@@ -33,10 +35,10 @@ function Main() {
             value: Math.ceil(Math.random() * 6),
             id: nanoid(),
             isHeld: false
-        }
-
-        )
+        })
     }
+
+    
     function allNewDice() {
         const newDice = [];
         for(let i = 0 ; i < 10 ; i++)
@@ -75,10 +77,11 @@ function Main() {
             <div className="dice-container">
                 {diceElements}
             </div>
+
+            <Results result={tenzies} time={time} moves={count} />
             <button onClick={rollDice} className="roll-btn">
                 {tenzies ? "New Game" : "Roll"}
             </button>
-            
         </main>
     )
 }
