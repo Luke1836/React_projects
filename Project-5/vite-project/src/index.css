@@ -20,6 +20,8 @@
     --ff-color: whitesmoke;
     --ff: "Mukta", sans-serif;
     --underline: #15f4e9;
+    --padding: 1rem;
+    --result-color: #0B2434;
 }
 
 
@@ -118,9 +120,18 @@ img {
 .p-description {
     padding: 1.1rem 0rem;
     font-size: 1.1rem;
-    width: 320px;
+    max-width: 420px;
     line-height: 1.25;
     text-align: center;
+}
+
+.results-section {
+    padding-top: var(--padding);
+}
+
+.results-section h2 {
+    font-size: var(--fs-sm);
+    color: var(--result-color);
 }
 
 @media screen and (max-width: 500px) {

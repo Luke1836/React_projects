@@ -6,7 +6,7 @@ function Results(props) {
     {
         return (
         <div className="results-section">
-            <h3>No: of throws required: {props.moves}</h3>
+            <h2>No: of throws required: {props.moves}</h2>
         </div>
     )}
 }
