@@ -58,7 +58,7 @@ function Main() {
 
     function rollDice() {
         if(!tenzies) {
-            count++;
+            count++;    //Increment count for each dice roll
             setDice(oldDice => oldDice.map(die => {
                 return(
                     die.isHeld ? die : generateNewDie()
