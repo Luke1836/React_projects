@@ -6,14 +6,14 @@ import {nanoid} from "nanoid";
 import Confetti from "react-confetti"
 
 let time = 0; //Keeps check of the total time taken to complete the game in seconds
-let count = 0; //Counts the number of rolls taken to win the game
-localStorage.setItem("NumberOfRolls", null);
-let minMoves = localStorage.setItem("NumberOfRolls");
+localStorage.setItem("NumberOfRolls", localStorage.getItem("NumberOfRolls") || 0);
+let minMoves = localStorage.getItem("NumberOfRolls");
 
 function Main() {
 
     const [dice, setDice] = useState(allNewDice());
     const [tenzies, setTenzies] = useState(false);
+    const [count, setCount] = useState(0); //Counts the number of rolls taken to win the game
 
     useEffect(() => {
         const allHeld = dice.every(die => die.isHeld);
@@ -24,6 +24,14 @@ function Main() {
         }
     }, [dice])
 
+    useEffect(() => {
+        if (tenzies) {
+          if (count < localStorage.getItem("NumberOfRolls") || localStorage.getItem("NumberOfRolls") === '0') {
+            localStorage.setItem("NumberOfRolls", count);
+            minMoves = count;
+          }
+        }
+      }, [tenzies, count]);
 
     //When the die is clicked it changes it's state from not held ot being held.
     //Here we change the color of the die to #59E691
@@ -60,7 +68,7 @@ function Main() {
 
     function rollDice() {
         if(!tenzies) {
-            count++;    //Increment count for each dice roll
+            setCount(prevCount => prevCount = prevCount + 1);  //Increment count for each dice roll
             setDice(oldDice => oldDice.map(die => {
                 return(
                     die.isHeld ? die : generateNewDie()
@@ -72,12 +80,7 @@ function Main() {
         else {
             setTenzies(false);
             setDice(allNewDice());
-            if(count < localStorage.getItem("NumberOfRolls")) {
-                localStorage.setItem("NumberOfRolls", count);
-                minMoves = localStorage.getItem("NumberOfMoves");
-            }
-
-            count = 0;
+            setCount(prevCount => prevCount = 0);
         }
     }
 
