@@ -8,7 +8,7 @@ import Confetti from "react-confetti"
 let time = 0; //Keeps check of the total time taken to complete the game in seconds
 let count = 0; //Counts the number of rolls taken to win the game
 localStorage.setItem("NumberOfRolls", null);
-
+let minMoves = localStorage.setItem("NumberOfRolls");
 
 function Main() {
 
@@ -72,8 +72,10 @@ function Main() {
         else {
             setTenzies(false);
             setDice(allNewDice());
-            if(count < localStorage.getItem("NumberOfRolls"))
+            if(count < localStorage.getItem("NumberOfRolls")) {
                 localStorage.setItem("NumberOfRolls", count);
+                minMoves = localStorage.getItem("NumberOfMoves");
+            }
 
             count = 0;
         }
@@ -88,7 +90,7 @@ function Main() {
                 {diceElements}
             </div>
 
-            <Results flag={tenzies} time={time} moves={count} />
+            <Results flag={tenzies} time={time} moves={count} minMoves={minMoves} />
             <button onClick={rollDice} className="roll-btn">
                 {tenzies ? "New Game" : "Roll"}
             </button>
