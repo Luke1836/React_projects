@@ -7,6 +7,8 @@ import Confetti from "react-confetti"
 
 let time = 0; //Keeps check of the total time taken to complete the game in seconds
 let count = 0; //Counts the number of rolls taken to win the game
+localStorage.setItem("NumberOfRolls", null);
+
 
 function Main() {
 
@@ -70,6 +72,9 @@ function Main() {
         else {
             setTenzies(false);
             setDice(allNewDice());
+            if(count < localStorage.getItem("NumberOfRolls"))
+                localStorage.setItem("NumberOfRolls", count);
+
             count = 0;
         }
     }
