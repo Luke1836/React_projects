@@ -41,6 +41,7 @@ function Main() {
         }))
     }
 
+
     function generateNewDie() {
         return ({
             value: Math.ceil(Math.random() * 6),
@@ -58,6 +59,7 @@ function Main() {
         return newDice;
     }
 
+
     const diceElements = dice.map(die => 
             <Die key={die.id} 
                  value={die.value} 
@@ -66,6 +68,7 @@ function Main() {
             />);
 
 
+            
     function rollDice() {
         if(!tenzies) {
             setCount(prevCount => prevCount = prevCount + 1);  //Increment count for each dice roll
