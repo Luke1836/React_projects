@@ -39,6 +39,7 @@ header img {
     height: 5rem;
     width: 10rem;
     object-fit: cover;
+    margin-top: 2rem;
 }
 
 header h1 {
