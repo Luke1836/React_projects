@@ -7,7 +7,7 @@ export const CORE_CONCEPTS = [
       'The core UI building block - compose the user interface by combining multiple components.',
   },
   {
-    image: "jsx-ui.png'",
+    image: "jsx-ui.png",
     title: 'JSX',
     description:
       'Return (potentially dynamic) HTML(ish) code to define the actual markup that will be rendered.',
