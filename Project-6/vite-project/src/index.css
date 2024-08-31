@@ -121,7 +121,11 @@ main h2 {
     text-align: left;
     color: #ebe7ef;
 }
-  
+
+#examples p {
+    margin: 1rem;
+}
+
 #examples menu {
     margin: 1rem 0;
     padding: 0;

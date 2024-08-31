@@ -6,11 +6,10 @@ import TabButton from "./Components/TabButton.jsx";
 
 export default function App()
 {
-    const [selectedTab, setSelectedTab] = useState("components")
+    const [selectedTab, setSelectedTab] = useState()
 
     function handleChanges(tab) {
         setSelectedTab(tab);
-        console.log(selectedTab);
         
     }
 
@@ -36,15 +35,18 @@ export default function App()
                         <TabButton handleChanges={() => handleChanges('props')}>Props</TabButton>
                         <TabButton handleChanges={() => handleChanges('state')}>State</TabButton>
                     </menu>
-                    <div id="tab-content">
-                        <h2>{ EXAMPLES[selectedTab].title }</h2>
-                        <p>{ EXAMPLES[selectedTab].description }</p>
-                        <pre>
-                            <code>
-                                { EXAMPLES[selectedTab].code }
-                            </code>
-                        </pre>
-                    </div>
+
+                    {!selectedTab ? <p>Choose a topic to view</p> : 
+                            <div id="tab-content">
+                                <h2>{ EXAMPLES[selectedTab].title }</h2>
+                                <p>{ EXAMPLES[selectedTab].description }</p>
+                                <pre>
+                                    <code>
+                                        { EXAMPLES[selectedTab].code }
+                                    </code>
+                                </pre>
+                            </div>
+                    }
                 </section>
             </main>
         </div>
