@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Components/Header";
 import Coreconcepts from "./Components/Coreconcepts";
 import { CORE_CONCEPTS } from "./Components/data.js"; 
+import TabButton from "./Components/TabButton.jsx";
 
 export default function App()
 {
@@ -9,7 +10,7 @@ export default function App()
         <div>
             <Header />
             <main>
-                <div id="core-concepts">
+                <section id="core-concepts">
                     <h2>Core Concepts</h2>
                     <ul>
                         <Coreconcepts {...CORE_CONCEPTS[0]} />
@@ -17,7 +18,17 @@ export default function App()
                         <Coreconcepts {...CORE_CONCEPTS[2]} />
                         <Coreconcepts {...CORE_CONCEPTS[3]} />
                     </ul>
-                </div>
+                </section>
+
+                <section id="examples">
+                    <h2>Examples</h2>
+                    <menu>
+                        <TabButton>Components</TabButton>
+                        <TabButton>JSX</TabButton>
+                        <TabButton>Props</TabButton>
+                        <TabButton>State</TabButton>
+                    </menu>
+                </section>
             </main>
         </div>
     );
