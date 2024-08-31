@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Header from "./Components/Header";
 import Coreconcepts from "./Components/Coreconcepts";
 import { CORE_CONCEPTS } from "./Components/data.js"; 
@@ -6,6 +6,14 @@ import TabButton from "./Components/TabButton.jsx";
 
 export default function App()
 {
+    const [selectedTab, setSelectedTab] = useState("Please click a button.")
+
+    function handleChanges(tab) {
+        setSelectedTab(tab);
+        console.log(selectedTab);
+        
+    }
+
     return (
         <div>
             <Header />
@@ -23,11 +31,14 @@ export default function App()
                 <section id="examples">
                     <h2>Examples</h2>
                     <menu>
-                        <TabButton>Components</TabButton>
-                        <TabButton>JSX</TabButton>
-                        <TabButton>Props</TabButton>
-                        <TabButton>State</TabButton>
+                        <TabButton handleChanges={() => handleChanges('components')}>Components</TabButton>
+                        <TabButton handleChanges={() => handleChanges('jsx')}>JSX</TabButton>
+                        <TabButton handleChanges={() => handleChanges('props')}>Props</TabButton>
+                        <TabButton handleChanges={() => handleChanges('state')}>State</TabButton>
                     </menu>
+                    <div id="tab-content">
+                        
+                    </div>
                 </section>
             </main>
         </div>

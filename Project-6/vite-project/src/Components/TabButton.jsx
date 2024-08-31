@@ -3,7 +3,7 @@ import React from "react";
 function TabButton(props) {
     return (
         <li>
-            <button>{props.children}</button>
+            <button onClick={props.handleChanges}>{props.children}</button>
         </li>
     )
 }
