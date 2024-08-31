@@ -12,26 +12,10 @@ export default function App()
                 <div id="core-concepts">
                     <h2>Core Concepts</h2>
                     <ul>
-                        <Coreconcepts 
-                            image={CORE_CONCEPTS[0].image}
-                            title={CORE_CONCEPTS[0].title}
-                            description={CORE_CONCEPTS[0].description}
-                        />
-                        <Coreconcepts 
-                            image={CORE_CONCEPTS[1].image}
-                            title={CORE_CONCEPTS[1].title}
-                            description={CORE_CONCEPTS[1].description}
-                        />
-                        <Coreconcepts 
-                            image={CORE_CONCEPTS[2].image}
-                            title={CORE_CONCEPTS[2].title}
-                            description={CORE_CONCEPTS[2].description}
-                        />
-                        <Coreconcepts 
-                            image={CORE_CONCEPTS[3].image}
-                            title={CORE_CONCEPTS[3].title}
-                            description={CORE_CONCEPTS[3].description}
-                        />
+                        <Coreconcepts {...CORE_CONCEPTS[0]} />
+                        <Coreconcepts {...CORE_CONCEPTS[1]} />
+                        <Coreconcepts {...CORE_CONCEPTS[2]} />
+                        <Coreconcepts {...CORE_CONCEPTS[3]} />
                     </ul>
                 </div>
             </main>
