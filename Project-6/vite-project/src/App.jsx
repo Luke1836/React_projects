@@ -30,10 +30,10 @@ export default function App()
                 <section id="examples">
                     <h2>Examples</h2>
                     <menu>
-                        <TabButton handleChanges={() => handleChanges('components')}>Components</TabButton>
-                        <TabButton handleChanges={() => handleChanges('jsx')}>JSX</TabButton>
-                        <TabButton handleChanges={() => handleChanges('props')}>Props</TabButton>
-                        <TabButton handleChanges={() => handleChanges('state')}>State</TabButton>
+                        <TabButton isSelected = {selectedTab === 'components'} handleChanges={() => handleChanges('components')}>Components</TabButton>
+                        <TabButton isSelected = {selectedTab === 'jsx'} handleChanges={() => handleChanges('jsx')}>JSX</TabButton>
+                        <TabButton isSelected = {selectedTab === 'props'} handleChanges={() => handleChanges('props')}>Props</TabButton>
+                        <TabButton isSelected = {selectedTab === 'state'} handleChanges={() => handleChanges('state')}>State</TabButton>
                     </menu>
 
                     {!selectedTab ? <p>Choose a topic to view</p> : 
