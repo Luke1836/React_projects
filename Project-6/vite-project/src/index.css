@@ -114,10 +114,12 @@ main h2 {
   
 #examples {
     margin: 3rem auto;
+    color: #ebe7ef;
 }
   
 #examples h2 {
     text-align: left;
+    color: #ebe7ef;
 }
   
 #examples menu {

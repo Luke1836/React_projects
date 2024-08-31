@@ -27,6 +27,7 @@ export const CORE_CONCEPTS = [
 ];
 
 export const EXAMPLES = {
+  
   components: {
     title: 'Components',
     description:
@@ -57,25 +58,25 @@ function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }`,
   },
-  
+
   state: {
     title: 'State',
     description:
       'State allows React components to change their output over time in response to user actions, network responses, and anything else.',
     code: `
-          function Counter() {
-            const [isVisible, setIsVisible] = useState(false);
+function Counter() {
+  const [isVisible, setIsVisible] = useState(false);
 
-            function handleClick() {
-              setIsVisible(true);
-            }
+  function handleClick() {
+    setIsVisible(true);
+  }
 
-            return (
-              <div>
-                <button onClick={handleClick}>Show Details</button>
-                {isVisible && <p>Amazing details!</p>}
-              </div>
-            );
-          }`,
-            },
+  return (
+    <div>
+      <button onClick={handleClick}>Show Details</button>
+      {isVisible && <p>Amazing details!</p>}
+    </div>
+  );
+}`,
+  },
 };

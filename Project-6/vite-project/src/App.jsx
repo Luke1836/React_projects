@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 import Header from "./Components/Header";
 import Coreconcepts from "./Components/Coreconcepts";
-import { CORE_CONCEPTS } from "./Components/data.js"; 
+import { CORE_CONCEPTS, EXAMPLES } from "./Components/data.js"; 
 import TabButton from "./Components/TabButton.jsx";
 
 export default function App()
 {
-    const [selectedTab, setSelectedTab] = useState("Please click a button.")
+    const [selectedTab, setSelectedTab] = useState("components")
 
     function handleChanges(tab) {
         setSelectedTab(tab);
@@ -37,7 +37,13 @@ export default function App()
                         <TabButton handleChanges={() => handleChanges('state')}>State</TabButton>
                     </menu>
                     <div id="tab-content">
-                        
+                        <h2>{ EXAMPLES[selectedTab].title }</h2>
+                        <p>{ EXAMPLES[selectedTab].description }</p>
+                        <pre>
+                            <code>
+                                { EXAMPLES[selectedTab].code }
+                            </code>
+                        </pre>
                     </div>
                 </section>
             </main>
