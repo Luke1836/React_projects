@@ -14,7 +14,7 @@ export default function App()
     }
 
     return (
-        <div>
+        <>
             <Header />
             <main>
                 <section id="core-concepts">
@@ -46,6 +46,6 @@ export default function App()
                     }
                 </section>
             </main>
-        </div>
+        </>
     );
 }
