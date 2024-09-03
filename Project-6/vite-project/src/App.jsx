@@ -1,43 +1,18 @@
 import React, {useState} from "react";
 import Header from "./Components/Header";
 import ConcpetsSection from "./Components/ConceptsSection.jsx";
-import TabButton from "./Components/TabButton.jsx";
+import Examples from "./Components/Examples.jsx";
 
 export default function App()
 {
-    const [selectedTab, setSelectedTab] = useState()
-
-    function handleChanges(tab) {
-        setSelectedTab(tab);
-        
-    }
+    
 
     return (
         <>
             <Header />
             <main>
                 <ConcpetsSection />
-                <section id="examples">
-                    <h2>Examples</h2>
-                    <menu>
-                        <TabButton isSelected = {selectedTab === 'components'} handleChanges={() => handleChanges('components')}>Components</TabButton>
-                        <TabButton isSelected = {selectedTab === 'jsx'} handleChanges={() => handleChanges('jsx')}>JSX</TabButton>
-                        <TabButton isSelected = {selectedTab === 'props'} handleChanges={() => handleChanges('props')}>Props</TabButton>
-                        <TabButton isSelected = {selectedTab === 'state'} handleChanges={() => handleChanges('state')}>State</TabButton>
-                    </menu>
-
-                    {!selectedTab ? <p>Choose a topic to view</p> : 
-                            <div id="tab-content">
-                                <h2>{ EXAMPLES[selectedTab].title }</h2>
-                                <p>{ EXAMPLES[selectedTab].description }</p>
-                                <pre>
-                                    <code>
-                                        { EXAMPLES[selectedTab].code }
-                                    </code>
-                                </pre>
-                            </div>
-                    }
-                </section>
+                <Examples />
             </main>
         </>
     );
