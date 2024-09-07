@@ -9,7 +9,7 @@ function Tabcontent(props)
                     <h2>{ EXAMPLES[props.selectedTab].title }</h2>
                     <p>{ EXAMPLES[props.selectedTab].description }</p>
                     <pre>
-                        <code>
+                        <code className="code">
                             { EXAMPLES[props.selectedTab].code }
                         </code>
                     </pre>
