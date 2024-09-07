@@ -1,6 +1,6 @@
-import { EXAMPLES } from "./data";
 import TabButton from "./TabButton";
 import React, {useState} from "react";
+import Tabcontent from "./Tabcontent";
 
 function Examples()
 {
@@ -19,19 +19,8 @@ function Examples()
                     <TabButton isSelected = {selectedTab === 'props'} handleChanges={() => handleChanges('props')}>Props</TabButton>
                     <TabButton isSelected = {selectedTab === 'state'} handleChanges={() => handleChanges('state')}>State</TabButton>
                 </menu>
-
-                {!selectedTab ? <p>Choose a topic to view</p> : 
-                    <div id="tab-content">
-                        <h2>{ EXAMPLES[selectedTab].title }</h2>
-                        <p>{ EXAMPLES[selectedTab].description }</p>
-                        <pre>
-                            <code>
-                                { EXAMPLES[selectedTab].code }
-                            </code>
-                        </pre>
-                    </div>
-                }
-        </section>
+                <Tabcontent selectedTab={selectedTab} />
+            </section>
     )
 }
 
