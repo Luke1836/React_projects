@@ -5,8 +5,6 @@ import Examples from "./Components/Examples.jsx";
 
 export default function App()
 {
-    
-
     return (
         <>
             <Header />
