@@ -4,7 +4,7 @@ import Tabcontent from "./Tabcontent";
 
 function Examples()
 {
-    const [selectedTab, setSelectedTab] = useState()
+    const [selectedTab, setSelectedTab] = useState();
 
     function handleChanges(tab) {
         setSelectedTab(tab);
