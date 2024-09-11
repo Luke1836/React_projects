@@ -14,7 +14,9 @@ function Examples()
     return (
             <section id="examples">
                 <h2>Examples</h2>
-                <Tabs buttons={ 
+                <Tabs 
+                        buttonsContainer="menu"    
+                        buttons={ 
                         <>
                             <TabButton isSelected = {selectedTab === 'components'} handleChanges={() => handleChanges('components')}>Components</TabButton>
                             <TabButton isSelected = {selectedTab === 'jsx'} handleChanges={() => handleChanges('jsx')}>JSX</TabButton>
