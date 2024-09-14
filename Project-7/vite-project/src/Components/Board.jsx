@@ -6,8 +6,8 @@ function Board()
     return (
         <div id="game-container">
             <ol id="players">
-                <Players name="Player-1" symbol="X" />
-                <Players name="Player-2" symbol="O" />
+                <Players initialName="Player-1" symbol="X" />
+                <Players initialName="Player-2" symbol="O" />
             </ol>
         GameBoard
         </div>
