@@ -5,7 +5,10 @@ function Board()
 {
     return (
         <div id="game-container">
-            <Players />
+            <ol id="players">
+                <Players name="Player-1" symbol="X" />
+                <Players name="Player-2" symbol="O" />
+            </ol>
         GameBoard
         </div>
     );

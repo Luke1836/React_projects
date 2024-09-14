@@ -1,18 +1,15 @@
 import React from "react";
 
-function Players()
+function Players(props)
 {
     return (
-        <ol id="players">
-            <li>
-                <span className="player-name">Player-1</span>
-                <span className="player-symbol">X</span>
-            </li>
-            <li>
-                <span className="player-name">Player-2</span>
-                <span className="player-symbol">O</span>
-            </li>
-        </ol>
+        <li>
+            <span className="player">
+                <span className="player-name">{props.name}</span>
+                <span className="player-symbol">{props.symbol}</span>
+            </span>
+            <button>Edit</button>
+        </li>
     )
 }
 
