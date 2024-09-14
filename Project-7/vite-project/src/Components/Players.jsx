@@ -1,12 +1,12 @@
 import React from "react";
 
-function Players(props)
+function Players({name, symbol})
 {
     return (
         <li>
             <span className="player">
-                <span className="player-name">{props.name}</span>
-                <span className="player-symbol">{props.symbol}</span>
+                <span className="player-name">{name}</span>
+                <span className="player-symbol">{symbol}</span>
             </span>
             <button>Edit</button>
         </li>
