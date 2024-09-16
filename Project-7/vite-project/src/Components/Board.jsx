@@ -3,21 +3,29 @@ import Players from "./Players";
 import GameBoard from "./GameBoard";
 import Log from "./Log";
 
+
+/* Helper function that doesn't depend upon the state, doesn't get re-created when the state changes */
+function setActivePlayer(gameTurns)
+{
+    let currentPlayer = "X";
+
+    if(gameTurns.length > 0 && gameTurns[0].player === "X") {
+        currentPlayer = "O";
+    }
+    return currentPlayer;
+}
+
+
 function Board()
 {
     const [gameTurns, setGameTurns] = useState([]);
-    const [activePlayer, setActivePlayer] = useState("X");
+    const activePlayer = setActivePlayer(gameTurns);
 
     function handleSelect(rowIndex, colIndex)
     {
-        setActivePlayer(prevPlayer => prevPlayer === "X" ? "O" : "X");
 
         setGameTurns((prevTurn) => {
-            let currentPlayer = "X";
-
-            if(prevTurn.length > 0 && prevTurn[0].player === "X"){
-                currentPlayer = "O";
-            }
+            const currentPlayer = setActivePlayer(prevTurn);
 
             const updatedTurn = [
                 { square: { row: rowIndex, col: colIndex }, player: currentPlayer },
