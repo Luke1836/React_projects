@@ -1,24 +1,7 @@
 import React from "react";
 
-const initialBoard = [
-    [null, null, null],
-    [null, null, null],
-    [null, null, null]
-];
-
-export default function GameBoard({ turns, onSelection })
+export default function GameBoard({ turns, onSelection, gameBoard })
 {
-    let gameBoard = initialBoard;
-
-    for (const turn of turns) {
-        /* We are getting the data in the turns Array, if any */
-        const { square, player } = turn;
-        const { row, col } = square;
-
-        gameBoard[row][col] = player;
-    }
-
-
     return (
         <ol id="game-board">
             {gameBoard.map((row, rowIndex) => (
@@ -35,5 +18,4 @@ export default function GameBoard({ turns, onSelection })
             ))}
         </ol>
     )
-
 }
