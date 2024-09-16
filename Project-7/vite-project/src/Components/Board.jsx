@@ -1,6 +1,7 @@
 import React,{ useState } from "react";
 import Players from "./Players";
 import GameBoard from "./GameBoard";
+import Log from "./Log";
 
 function Board()
 {
@@ -28,24 +29,27 @@ function Board()
     }
 
     return (
-        <div id="game-container">
-            <ol id="players" className="highlight-player">
-                <Players 
-                    initialName="Player-1" 
-                    symbol="X" 
-                    isActive={activePlayer==="X"} 
+        <>
+            <div id="game-container">
+                <ol id="players" className="highlight-player">
+                    <Players 
+                        initialName="Player-1" 
+                        symbol="X" 
+                        isActive={activePlayer==="X"} 
+                    />
+                    <Players 
+                        initialName="Player-2" 
+                        symbol="O" 
+                        isActive={activePlayer==="O"} 
+                    />
+                </ol>
+                <GameBoard 
+                    turns = {gameTurns}
+                    onSelection={ handleSelect} 
                 />
-                <Players 
-                    initialName="Player-2" 
-                    symbol="O" 
-                    isActive={activePlayer==="O"} 
-                />
-            </ol>
-            <GameBoard 
-                turns = {gameTurns}
-                onSelection={ handleSelect} 
-            />
-        </div>
+            </div>
+            <Log turns={gameTurns} />
+        </>
     );
 }
 
