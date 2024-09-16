@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function Players({initialName, symbol})
+function Players({initialName, symbol, isActive})
 {
     const [isEditing, setIsEditing] = useState(false);
     const [name, setName] = useState(initialName)
@@ -18,7 +18,7 @@ function Players({initialName, symbol})
     let playerName = isEditing ? <input type="text" required value={name} onChange={handleChange}/> : <span className="player-name">{ name }</span>;
 
     return (
-        <li>
+        <li className={isActive ? "active" : undefined}>
             <span className="player">
                 { playerName }
                 <span className="player-symbol">{symbol}</span>
