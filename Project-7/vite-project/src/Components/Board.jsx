@@ -28,7 +28,7 @@ function Board()
     const [gameTurns, setGameTurns] = useState([]);
     const activePlayer = setActivePlayer(gameTurns);
 
-    let gameBoard = initialBoard;
+    let gameBoard = [...initialBoard.map(array => [...array])]; // Preparing a deep copy, cause otherwise the symbols in the inner cells won't be removed. It won't be back to initial state
 
     for (const turn of gameTurns) {
         /* We are getting the data in the turns Array, if any */
@@ -51,6 +51,12 @@ function Board()
     }
 
     const hasDrawn = gameTurns.length === 9 && !winner;
+
+
+    function handleRestart()
+    {
+        setGameTurns([])
+    }
 
 
     function handleSelect(rowIndex, colIndex)
@@ -87,7 +93,7 @@ function Board()
                     onSelection={ handleSelect}
                     gameBoard={gameBoard}
                 />
-                { ( winner || hasDrawn ) && <GameOver winner={winner} />}
+                { ( winner || hasDrawn ) && <GameOver winner={winner} onRestart={handleRestart} />}
             </div>
             <Log turns={gameTurns} />
         </>
