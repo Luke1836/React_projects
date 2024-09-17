@@ -25,6 +25,11 @@ function setActivePlayer(gameTurns)
 
 function Board()
 {
+    const [players, setPlayers] = useState({
+        X: 'Player 1',
+        O: 'Player 2'
+    });
+
     const [gameTurns, setGameTurns] = useState([]);
     const activePlayer = setActivePlayer(gameTurns);
 
@@ -47,7 +52,7 @@ function Board()
         const thirdSquareSymbol = gameBoard[combination[2].row][combination[2].column]
 
         if( firstSquareSymbol && firstSquareSymbol === secondSquareSymbol && firstSquareSymbol == thirdSquareSymbol )
-            winner = firstSquareSymbol;
+            winner = players[firstSquareSymbol];
     }
 
     const hasDrawn = gameTurns.length === 9 && !winner;
@@ -73,6 +78,14 @@ function Board()
         });
     }
 
+    function handlePlayerNameChange(symbol, name)
+    {
+        setPlayers(prevPlayers => ({
+            ...prevPlayers,
+            [symbol]: name
+        }));
+    }
+
     return (
         <>
             <div id="game-container">
@@ -80,12 +93,14 @@ function Board()
                     <Players 
                         initialName="Player-1" 
                         symbol="X" 
-                        isActive={activePlayer==="X"} 
+                        isActive={activePlayer==="X"}
+                        onChangeName={handlePlayerNameChange}
                     />
                     <Players 
                         initialName="Player-2" 
                         symbol="O" 
-                        isActive={activePlayer==="O"} 
+                        isActive={activePlayer==="O"}
+                        onChangeName={handlePlayerNameChange}
                     />
                 </ol>
                 <GameBoard 
