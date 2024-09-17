@@ -22,27 +22,8 @@ function setActivePlayer(gameTurns)
     return currentPlayer;
 }
 
-
-function Board()
+function deriveWinner(gameBoard, players)
 {
-    const [players, setPlayers] = useState({
-        X: 'Player 1',
-        O: 'Player 2'
-    });
-
-    const [gameTurns, setGameTurns] = useState([]);
-    const activePlayer = setActivePlayer(gameTurns);
-
-    let gameBoard = [...initialBoard.map(array => [...array])]; // Preparing a deep copy, cause otherwise the symbols in the inner cells won't be removed. It won't be back to initial state
-
-    for (const turn of gameTurns) {
-        /* We are getting the data in the turns Array, if any */
-        const { square, player } = turn;
-        const { row, col } = square;
-
-        gameBoard[row][col] = player;
-    }
-
     let winner;
 
     for (const combination of WINNING_COMBINATIONS)
@@ -54,7 +35,38 @@ function Board()
         if( firstSquareSymbol && firstSquareSymbol === secondSquareSymbol && firstSquareSymbol == thirdSquareSymbol )
             winner = players[firstSquareSymbol];
     }
+    return winner;
+}
 
+function deriveGameBoard(gameTurns)
+{
+    let gameBoard = [...initialBoard.map(array => [...array])]; // Preparing a deep copy, cause otherwise the symbols in the inner cells won't be removed. It won't be back to initial state
+
+    for (const turn of gameTurns) {
+        /* We are getting the data in the turns Array, if any */
+        const { square, player } = turn;
+        const { row, col } = square;
+
+        gameBoard[row][col] = player;
+    }
+
+    return gameBoard
+}
+
+
+function Board()
+{
+    const [players, setPlayers] = useState({
+        X: 'Player 1',
+        O: 'Player 2'
+    });
+
+    const [gameTurns, setGameTurns] = useState([]);
+
+    const activePlayer = setActivePlayer(gameTurns);
+    const gameBoard = deriveGameBoard(gameTurns);
+
+    const winner = deriveWinner(gameBoard, players);
     const hasDrawn = gameTurns.length === 9 && !winner;
 
 
