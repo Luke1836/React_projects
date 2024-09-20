@@ -11,6 +11,11 @@ function App()
         duration: 11
     });
 
+    const isDurationValid = userInputs.duration >= 1 ? true : false;
+    const isReturnRateValid = userInputs.expectedReturn > 0 ? true : false;
+    const isAnnualInvestmentValid = userInputs.annualInvestment >= 100 ? true : false;
+
+
     function handleChange(inputIdentifier, newValue)
     {
         setUserInput((prevUserInput) => {
@@ -24,7 +29,10 @@ function App()
     return (
         <>
             <UserInputs userInputs={userInputs} handleChange={handleChange} />
-            <Results userInputs={userInputs} />
+            { !isDurationValid && <p className="center"><span className="attention">!</span> The Duration (Maturity) cannot be zero or negative <span className="attention">!</span></p> }
+            { !isAnnualInvestmentValid && <p className="center"><span className="attention">!</span> The Minimum Annual Investment should be 100 <span className="attention">!</span></p> }
+            { !isReturnRateValid && <p className="center"><span className="attention">!</span> The Return can't be zero or negative <span className="attention">!</span></p> }
+            { isDurationValid && isAnnualInvestmentValid && isReturnRateValid && <Results userInputs={userInputs} /> }
         </>
     )
 }

@@ -85,5 +85,14 @@ body {
 }
 
 .center {
-  text-align: center;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.attention {
+    font-size: 2rem;
+    color: rgb(247,23,34);
 }
