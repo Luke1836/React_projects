@@ -5,11 +5,12 @@
 // - expectedReturn: The expected (annual) rate of return
 // - duration: The investment duration (time frame)
 export function calculateInvestmentResults({
-    initialInvestment,
-    annualInvestment,
-    expectedReturn,
-    duration,
-  }) {
+          initialInvestment,
+          annualInvestment,
+          expectedReturn,
+          duration
+        })
+  {
     const annualData = [];
     let investmentValue = initialInvestment;
   

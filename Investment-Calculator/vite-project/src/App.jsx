@@ -18,7 +18,7 @@ function App()
                 ...prevUserInput,
                 [inputIdentifier]: +newValue // Converts string into number 
             })
-        })
+        });
     }
 
     return (
