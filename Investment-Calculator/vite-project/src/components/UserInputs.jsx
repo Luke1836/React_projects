@@ -1,24 +1,7 @@
 import React, { useState } from "react";
 
-export default function UserInputs()
+export default function UserInputs({ userInputs, handleChange })
 {
-    const [userInputs, setUserInput] = useState({
-            initialInvestment: 10000,
-            annualInvestment: 10000,
-            expectedReturn: 6,
-            duration: 11
-    });
-
-    function handleChange(inputIdentifier, newValue)
-    {
-        setUserInput((prevUserInput) => {
-            return ({
-                ...prevUserInput,
-                [inputIdentifier]: newValue
-            })
-        })
-    }
-
     return (
         <div id="user-input">
             <div className="input-group">
