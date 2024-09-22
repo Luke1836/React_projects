@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-export default function AuthInputs() {
+export default function AuthInputs() 
+{
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredPassword, setEnteredPassword] = useState('');
   const [submitted, setSubmitted] = useState(false);
