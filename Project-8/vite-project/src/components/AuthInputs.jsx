@@ -18,9 +18,11 @@ export default function AuthInputs()
     setSubmitted(true);
   }
 
+  // Placing Constraints
   const emailNotValid = submitted && !enteredEmail.includes('@');
   const passwordNotValid = submitted && enteredPassword.trim().length < 6;
 
+  
   return (
     <div id="auth-inputs">
       <div className="controls">
@@ -29,7 +31,7 @@ export default function AuthInputs()
           <input
             type="email"
             className={emailNotValid ? 'invalid' : undefined}
-            onChange={(event) => handleInputChange('email', event.target.value)}
+            onChange={ (event) => handleInputChange('email', event.target.value) }
           />
         </p>
         <p>
@@ -37,9 +39,7 @@ export default function AuthInputs()
           <input
             type="password"
             className={passwordNotValid ? 'invalid' : undefined}
-            onChange={(event) =>
-              handleInputChange('password', event.target.value)
-            }
+            onChange={ (event) => handleInputChange('password', event.target.value) }
           />
         </p>
       </div>
