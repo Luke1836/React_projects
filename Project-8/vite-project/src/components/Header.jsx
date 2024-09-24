@@ -1,5 +1,5 @@
 import logo from '../assets/logo.png';
-import './Header.css'
+import styles from './Header.module.css'
 
 export default function Header() 
 {
