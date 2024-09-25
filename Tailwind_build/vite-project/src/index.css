@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 100%;
+  min-height: 100vh;
+  background-image: radial-gradient(#022231, rgb(15,23,42));
+}
