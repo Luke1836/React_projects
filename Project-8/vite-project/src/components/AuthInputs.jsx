@@ -1,10 +1,22 @@
 import { useState } from 'react';
+import styled from 'styled-components'
 
 export default function AuthInputs() 
 {
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredPassword, setEnteredPassword] = useState('');
   const [submitted, setSubmitted] = useState(false);
+
+  /* --------- Styled Component ----------- */
+  const Label = styled.label`
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: ${({invalid}) => invalid ? '#f87171' : '#98a3ba'};
+  `;
 
   function handleInputChange(identifier, value) {
     if (identifier === 'email') {
@@ -27,7 +39,7 @@ export default function AuthInputs()
     <div id="auth-inputs">
       <div className="controls">
         <p>
-          <label className={`label ${emailNotValid ? 'invalid' : ''}`}>Email</label>
+          <Label invalid={ emailNotValid }>Email</Label>
           <input
             type="email"
             className={emailNotValid ? 'invalid' : undefined}
@@ -35,7 +47,7 @@ export default function AuthInputs()
           />
         </p>
         <p>
-          <label className={`label ${passwordNotValid ? 'invalid' : ''}`}>Password</label>
+          <Label invalid={ passwordNotValid }>Password</Label>
           <input
             type="password"
             className={passwordNotValid ? 'invalid' : undefined}
