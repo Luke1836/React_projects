@@ -72,6 +72,10 @@ header p {
   color: #d1f0ec;
 }
 
+#player input::placeholder {
+  color: #95b6b1;
+}
+
 #player button {
   cursor: pointer;
   background-color: #54a399;
