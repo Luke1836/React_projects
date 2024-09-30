@@ -1,7 +1,18 @@
+import { useState } from "react";
 
 function TimerChallenge({ title, timerValue })
 {
+    const [ timerStarted, setTimerStarted ] = useState(false);
+    const [ timerExpired, setTimerExpired ] = useState(false);
 
+    function handleTimerStart()
+    {
+        setTimeout(() => {
+            setTimerExpired(true)
+        }, timerValue * 1000)
+
+        setTimerStarted(prevState => !prevState);
+    }
     return (
         <section className="challenge">
             <h2>{ title }</h2>
@@ -9,13 +20,13 @@ function TimerChallenge({ title, timerValue })
                 { timerValue } second{ timerValue > 1 ? 's' : ''}
             </p>
             <p>
-                <button>
-                    Start Challenge
+                <button onClick={ handleTimerStart }>
+                    { timerStarted ? 'Stop' : 'Start' } Challenge
                 </button>
             </p>
 
-            <p>
-                TIme is running/ Timer Inactive (paused)
+            <p className={ timerStarted ? 'active' : undefined}>
+                { timerStarted ? 'TImer is running' :  'Timer inactive' }
             </p>
         </section>
     )
