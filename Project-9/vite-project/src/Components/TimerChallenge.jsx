@@ -13,6 +13,10 @@ function TimerChallenge({ title, timerValue })
     {
         clearInterval(timer.current);
         dialog.current.show();
+    }
+
+    function handleReset()
+    {
         setTimeRemaining(timerValue * 1000);
     }
 
@@ -31,7 +35,7 @@ function TimerChallenge({ title, timerValue })
 
     return (
         <>
-            <ResultsModal ref={dialog} result='lost' targetTime={ timerValue } />
+            <ResultsModal ref={dialog} targetTime={ timerValue } remainingTime={timeRemaining} onReset={ handleReset } />
             <section className="challenge">
                 <h2>{ title }</h2>
                 <p className="challenge-time">
