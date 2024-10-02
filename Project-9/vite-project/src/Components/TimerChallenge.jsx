@@ -6,22 +6,26 @@ function TimerChallenge({ title, timerValue })
     const timer = useRef();
     const dialog = useRef();
 
-    const [ timerStarted, setTimerStarted ] = useState(false);
-    const [ timerExpired, setTimerExpired ] = useState(false);
+    const [ timeRemaining, setTimeRemaining ] = useState(timerValue * 1000)
+
+    const timerActive = timeRemaining > 0 && timeRemaining < (timerValue * 1000);
+    if(timeRemaining <= 0)
+    {
+        clearInterval(timer.current);
+        dialog.current.show();
+        setTimeRemaining(timerValue * 1000);
+    }
 
     function handleTimerStart()
     {
-        timer.current = setTimeout(() => {
-            setTimerExpired(true);
-            dialog.current.show();
-            }, timerValue * 1000)
-
-        setTimerStarted(true);
+        timer.current = setInterval(() => {
+            setTimeRemaining(prevRemainingTime => prevRemainingTime - 10)
+        }, 10);
     }
 
     function handleTimerStop()
     {
-        setTimerStarted(false);
+        dialog.current.show();
         clearInterval(timer.current)
     }
 
@@ -34,13 +38,13 @@ function TimerChallenge({ title, timerValue })
                     { timerValue } second{ timerValue > 1 ? 's' : ''}
                 </p>
                 <p>
-                    <button onClick={ timerStarted ? handleTimerStop : handleTimerStart }>
-                        { timerStarted ? 'Stop' : 'Start' } Challenge
+                    <button onClick={ timerActive ? handleTimerStop : handleTimerStart }>
+                        { timerActive ? 'Stop' : 'Start' } Challenge
                     </button>
                 </p>
 
-                <p className={ timerStarted ? 'active' : undefined}>
-                    { timerStarted ? 'TImer is running' :  'Timer inactive' }
+                <p className={ timerActive ? 'active' : undefined}>
+                    { timerActive ? 'TImer is running' :  'Timer inactive' }
                 </p>
             </section>
         </>
