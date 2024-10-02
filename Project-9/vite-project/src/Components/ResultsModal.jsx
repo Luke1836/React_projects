@@ -1,8 +1,9 @@
+import { forwardRef } from "react";
 
-function ResultsModal({ result, targetTime })
+const ResultsModal = forwardRef(function ResultsModal({ result, targetTime }, ref)
 {
     return (
-        <dialog className="result-modal" open>
+        <dialog ref={ref} className="result-modal">  {/* When we use open we are forcing the dialog to show itself */}
             <h2>You {result}</h2>
             <p>The target time was <strong>{targetTime} seconds</strong></p>
             <p>You stopped the timer with <strong>X seconds left.</strong></p>
@@ -11,6 +12,6 @@ function ResultsModal({ result, targetTime })
             </form>
         </dialog>
     )
-}
+})
 
 export default ResultsModal;
