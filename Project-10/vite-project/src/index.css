@@ -1,0 +1,21 @@
+/* ---------- Fonts ------------ */
+
+
+/* ----------- Variables ----------- */
+:root {
+  --bgcolor: #333;
+}
+
+
+/* ----------- General Styles ------------ */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
