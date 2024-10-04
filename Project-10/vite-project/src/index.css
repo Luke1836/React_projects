@@ -1,10 +1,6 @@
-/* ---------- Fonts ------------ */
-
-
-/* ----------- Variables ----------- */
-:root {
-  --bgcolor: #333;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
 /* ----------- General Styles ------------ */
