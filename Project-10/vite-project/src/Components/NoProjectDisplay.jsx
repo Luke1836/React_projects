@@ -1,7 +1,9 @@
 import NoProjectImage from "../assets/no-projects.png"
 import AddProjectButton from "./AddProjectButton"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
-export default function NoProjectDisplay()
+export default function NoProjectDisplay({ onSelectProject })
 {
     return (
         <div className="w-2/3 text-center flex flex-col items-center gap-4 justify-center font-serif">
@@ -16,7 +18,7 @@ export default function NoProjectDisplay()
             <p>
                 No project selected or get started with a new project.
             </p>
-            <AddProjectButton />
+            <AddProjectButton onClick={ onSelectProject }><FontAwesomeIcon icon={faPlus}/> Add Project</AddProjectButton>
         </div>
     )
 }
