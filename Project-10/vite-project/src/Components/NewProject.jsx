@@ -4,10 +4,10 @@ import Modal from "./Modal";
 
 function NewProject({ onSave })
 {
+    const modal = useRef();
     const titleRef = useRef();
     const descriptionRef = useRef();
     const dueDateRef = useRef();
-    const modal = useRef();
 
     function handleSave()
     {
@@ -17,7 +17,7 @@ function NewProject({ onSave })
 
         if( enteredDueDate.trim() === '' || enteredTitle.trim() === '' || enteredeDescription.trim() === '' )
         {
-            modal.current.show();
+            modal.current.open();
             return;
         }
             
@@ -27,14 +27,16 @@ function NewProject({ onSave })
             dueDate: enteredDueDate,
             id: Math.random()
         });
+
+        modal.current.close();
     }
 
     return (
         <>
             <Modal ref={modal} buttonCaption="Okay">
-                <h1>Invalid Input</h1>
-                <p>Ooops...... Invalid Entries detected!!! Please check your inputs.</p>
-                <p>Please enter a valid Input for each field!</p>
+                <h1 className="font-bold text-slate-300 text-xl mb-4">Invalid Input</h1>
+                <p className="text-amber-200">Ooops...... Invalid Entries detected!!! Please check your inputs.</p>
+                <p className="text-amber-400">Please enter a valid Input for each field!</p>
             </Modal>
             <div className="w-[35rem] pt-16">
                 <menu className="flex items-center justify-end gap-2">

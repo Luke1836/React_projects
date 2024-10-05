@@ -22,14 +22,14 @@ const ResultsModal = forwardRef(function ResultsModal({ targetTime, remainingTim
 
     return (
         createPortal(
-        <dialog ref={dialog} className="result-modal" onClose={ onReset }>  {/* When we use open we are forcing the dialog to show itself */}
-            <h2>You {lostCondition ? 'lost' : `Score: ${score}`}!</h2>
-            <p>The target time was <strong>{targetTime} seconds</strong></p>
-            <p>You stopped the timer with <strong>{ formatedRemainingTime } seconds left.</strong></p>
-            <form method="dialog" onSubmit={ onReset }>
-                <button>Close</button>
-            </form>
-        </dialog>, document.getElementById('modal')
+            <dialog ref={dialog} className="result-modal" onClose={ onReset }>  {/* When we use open we are forcing the dialog to show itself */}
+                <h2>You {lostCondition ? 'lost' : `Score: ${score}`}!</h2>
+                <p>The target time was <strong>{targetTime} seconds</strong></p>
+                <p>You stopped the timer with <strong>{ formatedRemainingTime } seconds left.</strong></p>
+                <form method="dialog" onSubmit={ onReset }>
+                    <button type="submit">Close</button>
+                </form>
+            </dialog>, document.getElementById('modal')
         )
     )
 })
