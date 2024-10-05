@@ -23,7 +23,8 @@ function App()
     setProjectSelected(prevState => ({
       ...prevState,
       projects: [...prevState.projects, projectToBeAdded],
-      id: Math.random()
+      id: Math.random(),
+      projectSelectedId: undefined  
     }));
   }
 
