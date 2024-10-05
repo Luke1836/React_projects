@@ -27,11 +27,19 @@ function App()
     }));
   }
 
+  function handleCancel()
+  {
+    setProjectSelected(prevState => ({
+      ...prevState,
+      projectSelectedId: undefined  
+    }));
+  }
+
   let chosen;
   if( projectSelected.projectSelectedId === undefined ) 
     chosen = <NoProjectDisplay onSelectProject={ handleSelect } />
   else if( projectSelected.projectSelectedId === null )
-    chosen = <NewProject onSave={ handleSave } />
+    chosen = <NewProject onSave={ handleSave } onCancel={ handleCancel } />
 
   console.log(projectSelected);
 
