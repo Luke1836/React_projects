@@ -17,7 +17,8 @@ function NewProject({ onSave })
         onSave({
             title: enteredTitle,
             description: enteredeDescription,
-            dueDate: enteredDueDate
+            dueDate: enteredDueDate,
+            id: Math.random()
         });
     }
 

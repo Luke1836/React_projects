@@ -23,7 +23,6 @@ function App()
     setProjectSelected(prevState => ({
       ...prevState,
       projects: [...prevState.projects, projectToBeAdded],
-      id: Math.random(),
       projectSelectedId: undefined  
     }));
   }
@@ -38,7 +37,7 @@ function App()
 
     return (
       <main className="h-svh py-8 flex gap-8">
-        <ProjectsSidebar onSelectProject={ handleSelect } />
+        <ProjectsSidebar onSelectProject={ handleSelect } projects={ projectSelected.projects } />
         { chosen }
       </main>
     )
