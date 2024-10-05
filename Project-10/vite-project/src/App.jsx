@@ -18,11 +18,22 @@ function App()
     }));
   }
 
+  function handleSave(projectToBeAdded)
+  {
+    setProjectSelected(prevState => ({
+      ...prevState,
+      projects: [...prevState.projects, projectToBeAdded],
+      id: Math.random()
+    }));
+  }
+
   let chosen;
   if( projectSelected.projectSelectedId === undefined ) 
     chosen = <NoProjectDisplay onSelectProject={ handleSelect } />
   else if( projectSelected.projectSelectedId === null )
-    chosen = <NewProject />
+    chosen = <NewProject onSave={ handleSave } />
+
+  console.log(projectSelected);
 
     return (
       <main className="h-svh py-8 flex gap-8">
