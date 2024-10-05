@@ -9,7 +9,7 @@ function ProjectsSidebar()
                 Your projects
             </h2>
             <div>
-                <button className='px-4 py-2 text-xs md:text-base rounded-md  bg-stone-700 text-stone-400 hover:text-stone-300 hover:bg-stone-500 active:text-stone-200 active:p-3'>
+                <button className='px-4 py-2 text-xs md:text-base rounded-md  bg-stone-700 text-stone-400 hover:text-stone-300 hover:bg-stone-500 active:text-stone-200'>
                     <FontAwesomeIcon icon={faPlus}/> Add Project
                 </button>
             </div>
