@@ -12,6 +12,15 @@ function App()
   });
 
 
+  function handleSelectedProject( id )
+  {
+    setProjectSelected(prevState => ({
+      ...prevState,
+      projectSelectedId: id  
+    }));
+  }
+
+
   function handleSelect()
   {
     setProjectSelected(prevState => ({
@@ -40,16 +49,9 @@ function App()
   }
 
 
-  function handleSelectedProject( id )
-  {
-    setProjectSelected(prevState => ({
-      ...prevState,
-      projectSelectedId: id  
-    }));
-  }
+  const selectedProject = projectSelected.projects.find(project => project.id === projectSelected.projectSelectedId)
 
-
-  let chosen = <SelectedProject projects={ projectSelected.projects } />;
+  let chosen = <SelectedProject projects={ selectedProject } />;
 
   if( projectSelected.projectSelectedId === undefined ) 
     chosen = <NoProjectDisplay onSelectProject={ handleSelect } />
@@ -63,7 +65,8 @@ function App()
         <ProjectsSidebar 
             onAddProject={ handleSelect } 
             projects={ projectSelected.projects } 
-            onSelectProject={ handleSelectedProject }  
+            onSelectProject={ handleSelectedProject } 
+            selectedProjectId={ projectSelected.projectSelectedId }
         />
         { chosen }
       </main>
