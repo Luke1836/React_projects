@@ -27,8 +27,6 @@ function NewProject({ onSave, onCancel })
             dueDate: enteredDueDate,
             id: Math.random()
         });
-
-        modal.current.close();
     }
 
     return (

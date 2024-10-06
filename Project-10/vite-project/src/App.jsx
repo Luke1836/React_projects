@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ProjectsSidebar from "./Components/ProjectsSidebar";
 import NewProject from "./Components/NewProject"
 import NoProjectDisplay from "./Components/NoProjectDisplay";
+import SelectedProject from "./Components/SelectedProject";
 
 function App()
 {
@@ -10,6 +11,7 @@ function App()
     projects: []
   });
 
+
   function handleSelect()
   {
     setProjectSelected(prevState => ({
@@ -17,6 +19,7 @@ function App()
       projectSelectedId: null
     }));
   }
+
 
   function handleSave(projectToBeAdded)
   {
@@ -27,6 +30,7 @@ function App()
     }));
   }
 
+
   function handleCancel()
   {
     setProjectSelected(prevState => ({
@@ -35,7 +39,18 @@ function App()
     }));
   }
 
-  let chosen;
+
+  function handleSelectedProject( id )
+  {
+    setProjectSelected(prevState => ({
+      ...prevState,
+      projectSelectedId: id  
+    }));
+  }
+
+
+  let chosen = <SelectedProject projects={ projectSelected.projects } />;
+
   if( projectSelected.projectSelectedId === undefined ) 
     chosen = <NoProjectDisplay onSelectProject={ handleSelect } />
   else if( projectSelected.projectSelectedId === null )
@@ -45,7 +60,11 @@ function App()
 
     return (
       <main className="h-svh py-8 flex gap-8">
-        <ProjectsSidebar onSelectProject={ handleSelect } projects={ projectSelected.projects } />
+        <ProjectsSidebar 
+            onAddProject={ handleSelect } 
+            projects={ projectSelected.projects } 
+            onSelectProject={ handleSelectedProject }  
+        />
         { chosen }
       </main>
     )
