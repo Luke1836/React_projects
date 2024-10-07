@@ -9,7 +9,7 @@ function ProjectsSidebar({ onAddProject, projects, onSelectProject, selectedProj
             <h2 className='mb-8 font-bold uppercase md:text-xl'>
                 Your projects
             </h2>
-            <div>
+            <div className="mb-[1rem]">
                 <AddProjectButton onClick={ onAddProject }><FontAwesomeIcon icon={faPlus}/> Add Project</AddProjectButton>
             </div>
             <ul >
