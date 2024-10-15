@@ -18,7 +18,7 @@ function NewProject({ onSave, onCancel })
         if( enteredDueDate.trim() === '' || enteredTitle.trim() === '' || enteredeDescription.trim() === '' )
         {
             modal.current.open();
-            return;
+            return;         //Stop the execution of the rest of the code
         }
             
         onSave({
@@ -39,13 +39,18 @@ function NewProject({ onSave, onCancel })
             <div className="w-[12rem] md:w-[35rem] pt-16">
                 <menu className="flex items-center justify-end gap-2">
                     <li>
-                        <button className= "text-stone-700 px-4 py-1 rounded-sm font-semibold hover:text-stone-100 hover:bg-stone-800 hover:rounded-md" onClick={ onCancel }>
+                        <button 
+                            className= "text-stone-700 px-4 py-1 rounded-sm font-semibold hover:text-stone-100 hover:bg-stone-800 hover:rounded-md" 
+                            onClick={ onCancel }
+                        >
                             Cancel
                         </button>
                     </li>
                     <li>
-                        <button className="bg-stone-800 text-slate-200 px-4 py-1 rounded-md font-semibold hover:text-stone-800 hover:bg-stone-100"
-                        onClick={ handleSave }>
+                        <button 
+                            className="bg-stone-800 text-slate-200 px-4 py-1 rounded-md font-semibold hover:text-stone-800 hover:bg-stone-100"
+                            onClick={ handleSave }
+                        >
                             Save
                         </button>
                     </li>

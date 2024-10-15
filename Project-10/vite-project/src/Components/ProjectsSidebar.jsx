@@ -12,7 +12,7 @@ function ProjectsSidebar({ onAddProject, projects, onSelectProject, selectedProj
             <div className="mb-[1rem]">
                 <AddProjectButton onClick={ onAddProject }><FontAwesomeIcon icon={faPlus}/> Add Project</AddProjectButton>
             </div>
-            <ul >
+            <ul>
                 { projects.map((project) => {
                     let styles = "w-full text-[1rem] text-left mt-2 hover:bg-stone-600 py-1 px-1 rounded-md pl-2"
                     if(project.id === selectedProjectId)
