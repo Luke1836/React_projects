@@ -4,12 +4,14 @@ import Header from './components/Header.jsx';
 import Shop from './components/Shop.jsx';
 import { DUMMY_PRODUCTS } from './dummy-products.js';
 
-function App() {
+function App() 
+{
   const [shoppingCart, setShoppingCart] = useState({
     items: [],
   });
 
-  function handleAddItemToCart(id) {
+  function handleAddItemToCart(id) 
+  {
     setShoppingCart((prevShoppingCart) => {
       const updatedItems = [...prevShoppingCart.items];
 
@@ -40,7 +42,9 @@ function App() {
     });
   }
 
-  function handleUpdateCartItemQuantity(productId, amount) {
+
+  function handleUpdateCartItemQuantity(productId, amount) 
+  {
     setShoppingCart((prevShoppingCart) => {
       const updatedItems = [...prevShoppingCart.items];
       const updatedItemIndex = updatedItems.findIndex(
