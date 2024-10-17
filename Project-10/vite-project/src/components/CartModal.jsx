@@ -14,6 +14,7 @@ const CartModal = forwardRef(function Modal({ cartItems, onUpdateCartItemQuantit
     };
   });
 
+  
   return createPortal(
     <dialog id="modal" ref={dialog}>
       <h2>{title}</h2>
