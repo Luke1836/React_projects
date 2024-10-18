@@ -76,9 +76,9 @@ function App()
     <>
       <Header
         cart={shoppingCart}
-        onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
+        onUpdateCartItemQuantity={ handleUpdateCartItemQuantity }
       />
-      <Shop onAddItemToCart={handleAddItemToCart} />
+      <Shop onAddItemToCart={ handleAddItemToCart } />
     </>
   );
 }
