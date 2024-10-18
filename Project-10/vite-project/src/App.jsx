@@ -20,13 +20,16 @@ function App()
       );
       const existingCartItem = updatedItems[existingCartItemIndex];
 
-      if (existingCartItem) {
+      if (existingCartItem) 
+      {
         const updatedItem = {
           ...existingCartItem,
           quantity: existingCartItem.quantity + 1,
         };
         updatedItems[existingCartItemIndex] = updatedItem;
-      } else {
+      } 
+      else 
+      {
         const product = DUMMY_PRODUCTS.find((product) => product.id === id);
         updatedItems.push({
           id: id,
