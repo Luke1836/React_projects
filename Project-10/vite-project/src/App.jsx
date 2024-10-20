@@ -4,6 +4,7 @@ import Header from './components/Header.jsx';
 import Shop from './components/Shop.jsx';
 import { DUMMY_PRODUCTS } from './dummy-products.js';
 
+
 function App() 
 {
   const [shoppingCart, setShoppingCart] = useState({
@@ -51,7 +52,7 @@ function App()
     setShoppingCart((prevShoppingCart) => {
       const updatedItems = [...prevShoppingCart.items];
       const updatedItemIndex = updatedItems.findIndex(
-        (item) => item.id === productId
+            (item) => item.id === productId
       );
 
       const updatedItem = {
@@ -60,11 +61,11 @@ function App()
 
       updatedItem.quantity += amount;
 
-      if (updatedItem.quantity <= 0) {
+      if (updatedItem.quantity <= 0) 
         updatedItems.splice(updatedItemIndex, 1);
-      } else {
+      else
         updatedItems[updatedItemIndex] = updatedItem;
-      }
+
 
       return {
         items: updatedItems,
