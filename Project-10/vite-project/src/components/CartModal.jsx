@@ -20,7 +20,7 @@ const CartModal = forwardRef(function Modal({ cartItems, onUpdateCartItemQuantit
       <h2>{title}</h2>
       <Cart items={cartItems} onUpdateItemQuantity={onUpdateCartItemQuantity} />
       <form method="dialog" id="modal-actions">
-        {actions}
+        { actions }
       </form>
     </dialog>,
     document.getElementById('modal')
