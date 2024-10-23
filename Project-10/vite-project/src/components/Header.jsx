@@ -1,11 +1,12 @@
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
 import CartModal from './CartModal.jsx';
+import CartContext from '../Shop/shopping-cart-context.jsx';
 
 
-export default function Header({ cart, onUpdateCartItemQuantity }) 
+export default function Header() 
 {
   const modal = useRef();
-
+  const cartCtx = useContext(CartContext)
   const cartQuantity = cart.items.length;
 
   function handleOpenCartClick() {
