@@ -16,6 +16,7 @@ export default function Header()
   let modalActions = <button>Close</button>;
 
   if (cartQuantity > 0) {
+    
     modalActions = (
       <>
         <button>Close</button>
