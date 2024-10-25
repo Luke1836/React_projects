@@ -67,7 +67,6 @@ function App()
       else
         updatedItems[updatedItemIndex] = updatedItem;
 
-
       return {
         items: updatedItems,
       };
