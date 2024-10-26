@@ -79,9 +79,10 @@ function App()
     addItemToCart: handleAddItemToCart
   }
 
+
   return (
     <CartContext.Provider value={ ctxValue }>
-      <Header />
+      <Header onUpdateCartItemQuantity= {handleUpdateCartItemQuantity} />
       <Shop>
         {DUMMY_PRODUCTS.map((product) => (
           <li key={product.id}>
