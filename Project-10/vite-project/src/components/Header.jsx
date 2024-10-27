@@ -15,8 +15,8 @@ export default function Header({ onUpdateCartItemQuantity })
 
   let modalActions = <button>Close</button>;
 
-  if (cartQuantity > 0) {
-    
+  if (cartQuantity > 0) 
+  {  
     modalActions = (
       <>
         <button>Close</button>
