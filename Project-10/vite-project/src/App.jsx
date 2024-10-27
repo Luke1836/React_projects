@@ -76,7 +76,8 @@ function App()
   // Context State Link
   const ctxValue = {
     items: shoppingCart.items,
-    addItemToCart: handleAddItemToCart
+    addItemToCart: handleAddItemToCart,
+    updateItemsQuantity: handleUpdateCartItemQuantity,
   }
 
 
