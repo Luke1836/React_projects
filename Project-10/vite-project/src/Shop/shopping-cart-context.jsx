@@ -1,10 +1,13 @@
 import { createContext } from 'react'
 
 // For better auto-completion we add the values inside object
-const CartContext = createContext({
+export const CartContext = createContext({
     items: [],
     addItemToCart: () => {},
     updateItemsQuantity: () => {},
 });
 
-export default CartContext;
+export default function CartContextProvider()
+{
+    
+}
