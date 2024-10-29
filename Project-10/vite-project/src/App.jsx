@@ -1,14 +1,11 @@
-
 import Product from './components/Product.jsx';
 import Header from './components/Header.jsx';
 import Shop from './components/Shop.jsx';
 import CartContextProvider from './Shop/shopping-cart-context.jsx';
-import { CartContext } from './Shop/shopping-cart-context.jsx';
 
 
 function App() 
 {
-  
   return (
     <CartContextProvider>
       <Header onUpdateCartItemQuantity= {handleUpdateCartItemQuantity} />
