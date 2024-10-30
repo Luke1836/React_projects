@@ -9,17 +9,19 @@ export const CartContext = createContext({
     updateItemsQuantity: () => {},
 });
 
+
 export default function CartContextProvider({ children })
 {
     const [shoppingCart, setShoppingCart] = useState({
-        items: [],
-      });
+                                                      items: [],
+                                                    });
     
       function handleAddItemToCart(id) 
       {
-        setShoppingCart((prevShoppingCart) => {
+        setShoppingCart(( prevShoppingCart ) => {
           const updatedItems = [...prevShoppingCart.items];
     
+          // Get the cart item selected
           const existingCartItemIndex = updatedItems.findIndex(
             (cartItem) => cartItem.id === id
           );
