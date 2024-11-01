@@ -52,8 +52,6 @@ export default function CartContextProvider({ children })
         });
       }
     
-      
-    
       function handleUpdateCartItemQuantity(productId, amount) 
       {
         setShoppingCart((prevShoppingCart) => {
