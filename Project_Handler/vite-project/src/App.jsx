@@ -102,7 +102,7 @@ function App()
   else if( projectSelected.projectSelectedId === null )
     chosen = <NewProject onSave={ handleSave } onCancel={ handleCancel } />
 
-  console.log(projectSelected);
+  //console.log(projectSelected);
 
     return (
       <main className="h-svh py-8 flex gap-8">
