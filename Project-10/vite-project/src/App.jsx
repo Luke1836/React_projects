@@ -4,7 +4,6 @@ import Shop from './components/Shop.jsx';
 import CartContextProvider from './Shop/shopping-cart-context.jsx';
 import { DUMMY_PRODUCTS } from './dummy-products.js';
 
-
 function App() 
 {
   return (
