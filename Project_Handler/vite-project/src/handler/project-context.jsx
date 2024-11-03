@@ -6,3 +6,8 @@ export const projects = createContext({
     projects: [],
     tasks: []
 })
+
+export default function ProjectProvider()
+{
+    
+}

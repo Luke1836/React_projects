@@ -12,9 +12,7 @@ export const CartContext = createContext({
 
 export default function CartContextProvider({ children })
 {
-    const [shoppingCart, setShoppingCart] = useState({
-                                                      items: [],
-                                                    });
+    const [shoppingCart, setShoppingCart] = useState({ items: [], });
     
       function handleAddItemToCart(id) 
       {
