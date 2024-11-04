@@ -3,6 +3,8 @@ import ProjectsSidebar from "./Components/ProjectsSidebar";
 import NewProject from "./Components/NewProject"
 import NoProjectDisplay from "./Components/NoProjectDisplay";
 import SelectedProject from "./Components/SelectedProject";
+import ProjectProvider from "./handler/project-context";
+
 
 function App()
 {
