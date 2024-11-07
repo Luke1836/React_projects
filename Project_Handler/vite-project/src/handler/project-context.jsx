@@ -5,13 +5,13 @@ import NoProjectDisplay from "../Components/NoProjectDisplay";
 import SelectedProject from "../Components/SelectedProject";
 
 // For better auto-completion
-export const projects = createContext({
+export const Projects = createContext({
     projectSelectedId: undefined,
     projects: [],
     tasks: []
 })
 
-export default function ProjectProvider()
+export default function ProjectProvider({ children })
 {
     const [ projectSelected, setProjectSelected ] = useState({
         projectSelectedId: undefined,
@@ -109,5 +109,17 @@ export default function ProjectProvider()
       else if( projectSelected.projectSelectedId === null )
         chosen = <NewProject onSave={ handleSave } onCancel={ handleCancel } />
     
-      console.log(projectSelected);
+      //console.log(projectSelected);
+
+      const ctxValue = {
+        projectSelectedId: undefined,
+        projects: [],
+        tasks: []
+      }
+
+      return (
+        <Projects.Provider>
+          { children }
+        </Projects.Provider>
+      )
 }
