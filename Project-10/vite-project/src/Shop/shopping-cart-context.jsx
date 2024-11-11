@@ -16,7 +16,8 @@ function ShoppingCartReducer(state, action)
 
 export default function CartContextProvider({ children })
 {
-    const [ shoppingCartState, shoppingCa] 
+    const [ shoppingCartState, shoppingCartDispatch ] = useReducer();
+    
     const [shoppingCart, setShoppingCart] = useState({ items: [], });
     
       function handleAddItemToCart(id) 
