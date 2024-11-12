@@ -8,7 +8,14 @@ import SelectedProject from "../Components/SelectedProject";
 export const Projects = createContext({
     projectSelectedId: undefined,
     projects: [],
-    tasks: []
+    tasks: [],
+    handleAddTask: () => {},
+    handleDeleteTask: () => {},
+    handleSave: () => {},
+    handleSelect: () => {},
+    handleCancel: () => {},
+    handleDeleteProject: () => {},
+    handleSelectedProject: () => {}
 })
 
 export default function ProjectProvider({ children })
@@ -112,9 +119,16 @@ export default function ProjectProvider({ children })
       //console.log(projectSelected);
 
       const ctxValue = {
-        projectSelectedId: undefined,
-        projects: [],
-        tasks: []
+        projectSelectedId: projectSelected.projectSelectedId,
+        projects: projectSelected.projects,
+        tasks: projectSelected.tasks,
+        handleAddTask: handleAddTask,
+        handleDeleteTask: handleDeleteTask,
+        handleSave: handleSave,
+        handleSelect: handleSelect,
+        handleCancel: handleCancel,
+        handleDeleteProject: handleDeleteProject,
+        handleSelectedProject: handleSelectedProject,
       }
 
       return (
