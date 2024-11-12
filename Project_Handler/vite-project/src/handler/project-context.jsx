@@ -116,7 +116,6 @@ export default function ProjectProvider({ children })
       else if( projectSelected.projectSelectedId === null )
         chosen = <NewProject onSave={ handleSave } onCancel={ handleCancel } />
     
-      //console.log(projectSelected);
 
       const ctxValue = {
         projectSelectedId: projectSelected.projectSelectedId,
@@ -132,7 +131,7 @@ export default function ProjectProvider({ children })
       }
 
       return (
-        <Projects.Provider>
+        <Projects.Provider value={ ctxValue }>
           { children }
         </Projects.Provider>
       )
