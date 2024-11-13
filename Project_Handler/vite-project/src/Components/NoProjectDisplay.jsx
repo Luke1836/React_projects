@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { ProjectsContext } from '../handler/project-context.jsx'
 
 
-export default function NoProjectDisplay({ onSelectProject })
+export default function NoProjectDisplay()
 {
     const ctxValues = useContext(ProjectsContext);
     return (
