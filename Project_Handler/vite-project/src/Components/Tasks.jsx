@@ -5,6 +5,7 @@ import { ProjectsContext } from '../handler/project-context.jsx'
 function Tasks()
 {
     const ctxValues = useContext(ProjectsContext);
+    
     return (
         <section>
             <h1 className="text-2xl font-bold text-stone-700 mb-4">Tasks</h1>

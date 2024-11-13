@@ -18,6 +18,7 @@ export const ProjectsContext = createContext({
     chosen: <NoProjectDisplay />,
 })
 
+
 export default function ProjectProvider({ children })
 {
     const [ projectSelected, setProjectSelected ] = useState({
@@ -26,6 +27,7 @@ export default function ProjectProvider({ children })
         tasks: []
       });
     
+
       function handleAddTask( task )
       {
         setProjectSelected(prevState => {
@@ -46,6 +48,7 @@ export default function ProjectProvider({ children })
         })
       }
     
+
       function handleDeleteTask( id )
       {
         setProjectSelected(prevState => ({
@@ -54,6 +57,7 @@ export default function ProjectProvider({ children })
         }))
       }
     
+
       function handleSelectedProject( id )
       {
         setProjectSelected(prevState => ({
