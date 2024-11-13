@@ -1,9 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import Input from "./Input";
 import Modal from "./Modal";
+import { ProjectsContext } from '../handler/project-context.jsx'
 
-function NewProject({ onSave, onCancel })
+function NewProject()
 {
+    const ctxValues = useContext(ProjectsContext);
     const modal = useRef();
     const titleRef = useRef();
     const descriptionRef = useRef();
@@ -21,7 +23,7 @@ function NewProject({ onSave, onCancel })
             return;         //Stop the execution of the rest of the code
         }
             
-        onSave({
+        ctxValues.handleSave({
             title: enteredTitle,
             description: enteredeDescription,
             dueDate: enteredDueDate,
@@ -41,7 +43,7 @@ function NewProject({ onSave, onCancel })
                     <li>
                         <button 
                             className= "text-stone-700 px-4 py-1 rounded-sm font-semibold hover:text-stone-100 hover:bg-stone-800 hover:rounded-md" 
-                            onClick={ onCancel }
+                            onClick={ ctxValues.handleCancel }
                         >
                             Cancel
                         </button>

@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { ProjectsContext } from '../handler/project-context.jsx'
 
-export default function NewTasks({ onAdd })
+export default function NewTasks()
 {
     const [ formData, setFormData ] = useState('');
+    const ctxValues = useContext(ProjectsContext);
+
     function handleChange(event)
     {
         setFormData(event.target.value);
@@ -12,7 +15,7 @@ export default function NewTasks({ onAdd })
     {
         if(formData.trim() === '')
             return;
-        onAdd(formData);
+        ctxValues.handleAddTask(formData);
         setFormData('');
     }
 

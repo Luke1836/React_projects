@@ -1,11 +1,10 @@
-import { createContext } from 'react'
-import React, { useState } from "react";
+import React, { useState, createContext } from "react";
 import NewProject from "../Components/NewProject"
 import NoProjectDisplay from "../Components/NoProjectDisplay";
 import SelectedProject from "../Components/SelectedProject";
 
 // For better auto-completion
-export const Projects = createContext({
+export const ProjectsContext = createContext({
     projectSelectedId: undefined,
     projects: [],
     tasks: [],
@@ -15,7 +14,8 @@ export const Projects = createContext({
     handleSelect: () => {},
     handleCancel: () => {},
     handleDeleteProject: () => {},
-    handleSelectedProject: () => {}
+    handleSelectedProject: () => {},
+    chosen: <NoProjectDisplay />,
 })
 
 export default function ProjectProvider({ children })
@@ -64,11 +64,11 @@ export default function ProjectProvider({ children })
     
     
       function handleSelect()
-      {
+      { 
         setProjectSelected(prevState => ({
           ...prevState,
           projectSelectedId: null
-        }));
+        }));        
       }
     
     
@@ -98,41 +98,39 @@ export default function ProjectProvider({ children })
           projectSelectedId: undefined,
           projects: prevState.projects.filter((project) => project.id !== prevState.projectSelectedId)
         }));
+      }    
+      
+      const selectedProject = projectSelected.projects.find(
+        (project) => project.id === projectSelected.projectSelectedId
+      );
+
+      let chosen;
+      if (projectSelected.projectSelectedId === undefined) {
+          chosen = <NoProjectDisplay />;
+      } else if (projectSelected.projectSelectedId === null) {
+          chosen = <NewProject />;
+      } else {
+          chosen = <SelectedProject projects={selectedProject} />; // Default initial value
       }
-    
-    
-      const selectedProject = projectSelected.projects.find(project => project.id === projectSelected.projectSelectedId)
-    
-      let chosen = <SelectedProject 
-                      projects={ selectedProject } 
-                      onDelete={ handleDeleteProject } 
-                      onAddTask = { handleAddTask }
-                      onDeleteTask = { handleDeleteTask }
-                      tasks= { projectSelected.tasks }
-                    />;
-    
-      if( projectSelected.projectSelectedId === undefined ) 
-        chosen = <NoProjectDisplay onSelectProject={ handleSelect } />
-      else if( projectSelected.projectSelectedId === null )
-        chosen = <NewProject onSave={ handleSave } onCancel={ handleCancel } />
-    
+
 
       const ctxValue = {
         projectSelectedId: projectSelected.projectSelectedId,
         projects: projectSelected.projects,
         tasks: projectSelected.tasks,
-        handleAddTask: handleAddTask,
-        handleDeleteTask: handleDeleteTask,
-        handleSave: handleSave,
-        handleSelect: handleSelect,
-        handleCancel: handleCancel,
-        handleDeleteProject: handleDeleteProject,
-        handleSelectedProject: handleSelectedProject,
+        handleAddTask,
+        handleDeleteTask,
+        handleSave,
+        handleSelect,
+        handleCancel,
+        handleDeleteProject,
+        handleSelectedProject,
+        chosen,
       }
 
       return (
-        <Projects.Provider value={ ctxValue }>
+        <ProjectsContext.Provider value={ ctxValue }>
           { children }
-        </Projects.Provider>
+        </ProjectsContext.Provider>
       )
 }

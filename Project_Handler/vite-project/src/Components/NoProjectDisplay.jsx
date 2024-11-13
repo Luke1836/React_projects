@@ -2,9 +2,13 @@ import NoProjectImage from "../assets/no-projects.png"
 import AddProjectButton from "./AddProjectButton"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { useContext } from "react";
+import { ProjectsContext } from '../handler/project-context.jsx'
+
 
 export default function NoProjectDisplay({ onSelectProject })
 {
+    const ctxValues = useContext(ProjectsContext);
     return (
         <div className="w-2/3 text-center flex flex-col items-center gap-4 justify-center font-serif">
             <img 
@@ -18,7 +22,7 @@ export default function NoProjectDisplay({ onSelectProject })
             <p>
                 No project selected or get started with a new project.
             </p>
-            <AddProjectButton onClick={ onSelectProject }><FontAwesomeIcon icon={faPlus}/> Add Project</AddProjectButton>
+            <AddProjectButton onClick={ ctxValues.handleSelect }><FontAwesomeIcon icon={faPlus}/> Add Project</AddProjectButton>
         </div>
     )
 }
