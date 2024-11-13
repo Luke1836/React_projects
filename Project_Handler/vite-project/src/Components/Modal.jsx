@@ -5,6 +5,7 @@ const Modal = forwardRef(function Modal({ children, buttonCaption }, ref)
 {
     const dialog = useRef();
 
+    // Used to modify refs (functionalities and behaviors)
     useImperativeHandle(ref, () => {
         return {
             open() {
@@ -13,6 +14,7 @@ const Modal = forwardRef(function Modal({ children, buttonCaption }, ref)
         }
     });
 
+    // Places the modal wrt another component and not the root component
     return createPortal(
         <dialog ref={ dialog } className="bg-stone-800 rounded-md p-4 md:p-8 lg:p-12 border-pink-800 border-2 leading-8">
             { children }

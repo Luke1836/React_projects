@@ -11,6 +11,7 @@ function NewProject()
     const descriptionRef = useRef();
     const dueDateRef = useRef();
 
+
     function handleSave()
     {
         const enteredTitle = titleRef.current.value;
@@ -31,6 +32,7 @@ function NewProject()
         });
     }
 
+    
     return (
         <>
             <Modal ref={modal} buttonCaption="Okay">
