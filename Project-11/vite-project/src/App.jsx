@@ -45,14 +45,14 @@ function App()
     modal.current.close();
   }
 
-  
+
 
   return (
     <>
       <Modal ref={modal}>
         <DeleteConfirmation
-          onCancel={handleStopRemovePlace}
-          onConfirm={handleRemovePlace}
+          onCancel = { handleStopRemovePlace }
+          onConfirm = { handleRemovePlace }
         />
       </Modal>
 
