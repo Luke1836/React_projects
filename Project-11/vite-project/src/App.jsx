@@ -6,21 +6,27 @@ import DeleteConfirmation from './components/DeleteConfirmation.jsx';
 import logoImg from './assets/logo.png';
 
 
-function App() {
+function App() 
+{
   const modal = useRef();
   const selectedPlace = useRef();
   const [pickedPlaces, setPickedPlaces] = useState([]);
 
-  function handleStartRemovePlace(id) {
+  function handleStartRemovePlace(id) 
+  {
     modal.current.open();
     selectedPlace.current = id;
   }
 
-  function handleStopRemovePlace() {
+
+  function handleStopRemovePlace() 
+  {
     modal.current.close();
   }
 
-  function handleSelectPlace(id) {
+
+  function handleSelectPlace(id) 
+  {
     setPickedPlaces((prevPickedPlaces) => {
       if (prevPickedPlaces.some((place) => place.id === id)) {
         return prevPickedPlaces;
@@ -30,12 +36,16 @@ function App() {
     });
   }
 
-  function handleRemovePlace() {
+
+  function handleRemovePlace() 
+  {
     setPickedPlaces((prevPickedPlaces) =>
       prevPickedPlaces.filter((place) => place.id !== selectedPlace.current)
     );
     modal.current.close();
   }
+
+  
 
   return (
     <>
