@@ -1,4 +1,5 @@
-export default function DeleteConfirmation({ onConfirm, onCancel }) {
+export default function DeleteConfirmation({ onConfirm, onCancel }) 
+{
   return (
     <div id="delete-confirmation">
       <h2>Are you sure?</h2>
