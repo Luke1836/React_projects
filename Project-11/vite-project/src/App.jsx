@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Places from './Components/Places.jsx';
 import { AVAILABLE_PLACES } from './data.js';
 import Modal from './Components/Modal.jsx';
@@ -6,19 +6,25 @@ import DeleteConfirmation from './Components/DeleteConfirmation.jsx';
 import logoImg from './assets/logo.png';
 import { sortPlacesByDistance } from './loc.js';
  
+
 function App() 
 {
   const modal = useRef();
   const selectedPlace = useRef();
   const [pickedPlaces, setPickedPlaces] = useState([]);
+  const [ availablePlaces, setAvailablePlaces ] = useState([]);
 
-  navigator.geolocation.getCurrentPosition((position) => {
-    const sortedPlaces = sortPlacesByDistance(
-      AVAILABLE_PLACES,
-      position.coords.latitude,
-      position.coords.longitude
-    )
-  })
+  // Side Effect of finding the nearby tourist places. Need to be executed once after the entire App component has finished it's execution
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const sortedPlaces = sortPlacesByDistance(
+        AVAILABLE_PLACES,
+        position.coords.latitude,
+        position.coords.longitude
+      )
+      setAvailablePlaces(sortedPlaces);
+    });
+  }, []);
 
   function handleStartRemovePlace(id) 
   {
@@ -81,7 +87,8 @@ function App()
         />
         <Places
           title="Available Places"
-          places={AVAILABLE_PLACES}
+          fallbackText="Sorting Places by Distance..."
+          places={availablePlaces}
           onSelectPlace={handleSelectPlace}
         />
       </main>
