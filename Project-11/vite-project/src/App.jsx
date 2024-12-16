@@ -48,6 +48,12 @@ function App()
       const place = AVAILABLE_PLACES.find((place) => place.id === id);
       return [place, ...prevPickedPlaces];
     });
+
+    const storedIds = JSON.parse(localStorage.getItem('storedPlaces')) || []; //Added a fallback if the first one returns undefined
+    if(storedIds.indexOf(id) === -1)
+    {
+      localStorage.setItem('storedPlaces', JSON.stringify([id, ...storedIds]));
+    }
   }
 
 
@@ -57,8 +63,13 @@ function App()
       prevPickedPlaces.filter((place) => place.id !== selectedPlace.current)
     );
     modal.current.close();
-  }
 
+    const storedIds = JSON.parse(localStorage.getItem('storedPlaces')) || [];
+    localStorage.setItem(
+      'StoredPlaces', 
+      JSON.stringify(storedIds.filter((id) => id !== selectedPlace.current)
+    ))
+  }
 
 
   return (
