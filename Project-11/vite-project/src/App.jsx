@@ -7,11 +7,15 @@ import logoImg from './assets/logo.png';
 import { sortPlacesByDistance } from './loc.js';
  
 
+// ACCESSING AND CHECKING THE PLACES THAT HAVE BEEN SELECTED BY THE USER //
+const storedIds = JSON.parse(localStorage.getItem('storedPlaces')) || [];
+const storedPlaces = storedIds.map((id) => AVAILABLE_PLACES.find((place) => place.id === id));
+
 function App() 
 {
   const modal = useRef();
   const selectedPlace = useRef();
-  const [pickedPlaces, setPickedPlaces] = useState([]);
+  const [pickedPlaces, setPickedPlaces] = useState(storedPlaces);
   const [ availablePlaces, setAvailablePlaces ] = useState([]);
 
   // Side Effect of finding the nearby tourist places. Need to be executed once after the entire App component has finished it's execution
@@ -66,7 +70,7 @@ function App()
 
     const storedIds = JSON.parse(localStorage.getItem('storedPlaces')) || [];
     localStorage.setItem(
-      'StoredPlaces', 
+      'storedPlaces', 
       JSON.stringify(storedIds.filter((id) => id !== selectedPlace.current)
     ))
   }
