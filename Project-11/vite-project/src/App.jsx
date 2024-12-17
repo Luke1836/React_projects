@@ -17,6 +17,7 @@ function App()
   const selectedPlace = useRef();
   const [pickedPlaces, setPickedPlaces] = useState(storedPlaces);
   const [ availablePlaces, setAvailablePlaces ] = useState([]);
+  const [ isModalOpen, setIsModalOpen ] = useState(false);
 
   // Side Effect of finding the nearby tourist places. Need to be executed once after the entire App component has finished it's execution
   useEffect(() => {
@@ -32,14 +33,14 @@ function App()
 
   function handleStartRemovePlace(id) 
   {
-    modal.current.open();
+    setIsModalOpen(true);
     selectedPlace.current = id;
   }
 
 
   function handleStopRemovePlace() 
   {
-    modal.current.close();
+    setIsModalOpen(false);
   }
 
 
@@ -66,7 +67,7 @@ function App()
     setPickedPlaces((prevPickedPlaces) =>
       prevPickedPlaces.filter((place) => place.id !== selectedPlace.current)
     );
-    modal.current.close();
+    setIsModalOpen(false);
 
     const storedIds = JSON.parse(localStorage.getItem('storedPlaces')) || [];
     localStorage.setItem(
@@ -78,7 +79,7 @@ function App()
 
   return (
     <>
-      <Modal ref={modal}>
+      <Modal ref={modal} open={ isModalOpen }>
         <DeleteConfirmation
           onCancel = { handleStopRemovePlace }
           onConfirm = { handleRemovePlace }
