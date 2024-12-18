@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react';
 import Places from './Components/Places.jsx';
 import { AVAILABLE_PLACES } from './data.js';
 import Modal from './Components/Modal.jsx';
@@ -29,6 +29,7 @@ function App()
       setAvailablePlaces(sortedPlaces);
     });
   }, []);
+
 
   function handleStartRemovePlace(id) 
   {
@@ -61,7 +62,8 @@ function App()
   }
 
 
-  function handleRemovePlace() 
+  // Doesn't cause this function to be re-created again when the component re-renders
+  const handleRemovePlace = useCallback(function handleRemovePlace() 
   {
     setPickedPlaces((prevPickedPlaces) =>
       prevPickedPlaces.filter((place) => place.id !== selectedPlace.current)
@@ -73,8 +75,8 @@ function App()
       'storedPlaces', 
       JSON.stringify(storedIds.filter((id) => id !== selectedPlace.current)
     ))
-  }
-
+  }, []);
+  
 
   return (
     <>
