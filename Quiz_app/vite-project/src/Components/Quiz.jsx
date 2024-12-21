@@ -18,7 +18,7 @@ function Quiz()
         return (
             <div id='summary'>
                 <img src={ TrophyIcon } alt='Trophy Icon' />
-                <h1>Quiz Complete</h1>
+                <h2>Quiz Complete</h2>
             </div>
         )
     }
