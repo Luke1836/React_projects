@@ -14,7 +14,7 @@ function Quiz()
     return (
         <div id="quiz">
             <div id='question'>
-                <h2>{ QUESTIONS[activeQuestionIndex].text }</h2>
+                <h2 id='text-shadow'>{ QUESTIONS[activeQuestionIndex].text }</h2>
                 <ul id='answers'>
                     { QUESTIONS[activeQuestionIndex].answers.map((answer) => 
                         (<li key={ answer } className='answer'>
