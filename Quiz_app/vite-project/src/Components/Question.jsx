@@ -8,7 +8,8 @@ export default function Question({
   index,
   onSelectAnswer,
   onSkipAnswer,
-}) {
+}) 
+{
   const [answer, setAnswer] = useState({
     selectedAnswer: '',
     isCorrect: null
