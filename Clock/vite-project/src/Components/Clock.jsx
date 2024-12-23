@@ -7,6 +7,7 @@ function Clock() {
     const [dayOrNight, setDayOrNight] = useState();
     const [backgroundColor, setBackgroundColor] = useState('');
 
+
     useEffect(() => {
         const interval = setInterval(() => {
             setTime(new Date()); 
@@ -15,6 +16,7 @@ function Clock() {
         return () => clearInterval(interval); 
     }, []);
 
+    
     useEffect(() => {
         const hours = time.getHours();
         const formattedHours = hours % 12 || 12; 
