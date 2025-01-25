@@ -356,6 +356,49 @@ header h1 {
   letter-spacing: 0.1rem;
 }
 
+@media screen and (max-width: 600px){
+  #summary {
+    max-width: 40rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: linear-gradient(180deg, #a17eda 0%, #895fc4 100%);
+    color: #191321;
+    border-radius: 8px;
+    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.6);
+    animation: slide-in-from-bottom 0.7s ease-out;
+  }
+  
+  #summary img {
+    display: block;
+    width: 8rem;
+    height: 8rem;
+    object-fit: contain;
+    margin: 0 auto 1rem auto;
+    padding: 1rem;
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
+    border: 2px solid #3a2353;
+    border-radius: 50%;
+    background: #c18cfa;
+  }
+  
+  #summary h2 {
+    font-size: 1.5rem;
+  }
+   
+  
+  #summary-stats {
+    margin: auto;
+    gap: 1.5rem;
+    
+  }
+  
+  #summary-stats .number {
+    font-size: 1.35rem;
+  }
+  
+  
+}
+
 @keyframes slide-in-from-bottom {
   0% {
     opacity: 0;
