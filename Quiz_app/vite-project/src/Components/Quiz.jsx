@@ -56,6 +56,11 @@ export default function Quiz()
   }
   return (
     <div id='quiz'>
+      <p>
+        <h3>Welcome to Your Ultimate Front-End Quiz Platform</h3>
+        <div className='underline'></div>
+        Challenge your knowledge and refine your expertise with our dedicated quiz platform, crafted specifically for front-end developers and web enthusiasts. Dive deep into your chosen technology stack, with a special emphasis on React, and gain a clear understanding of your proficiency. As a proud non-profit initiative, we offer this platform completely free of charge, ensuring an accessible and enjoyable learning experience for all. Embark on your journey of quizzing today and unlock your true potential in web development!
+      </p>
       <button className='start' onClick={ handleStartQuiz }>
         Start Quiz
       </button>

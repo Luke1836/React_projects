@@ -35,6 +35,13 @@ body {
   }
 }  
     
+.underline {
+  height: 4px;
+  width: 100%;
+  background-color: #9d5af5;
+  margin: 1.5rem 0;
+  border-radius: 6px;
+}
 
 header {
   margin: 2rem 0;
