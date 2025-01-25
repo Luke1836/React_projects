@@ -108,8 +108,9 @@ header h1 {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 1.25rem;
   padding: 0.25rem;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
+  margin-top: 1rem;
 }
 
 #quiz .start:hover {
@@ -331,6 +332,7 @@ header h1 {
   margin: 2rem auto;
   padding-bottom: 2rem;
   border-bottom: 2px solid #594276;
+  text-align: center;
 }
 
 #summary-stats p {
@@ -356,30 +358,7 @@ header h1 {
   letter-spacing: 0.1rem;
 }
 
-@media screen and (max-width: 600px){
-  #summary {
-    max-width: 40rem;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: linear-gradient(180deg, #a17eda 0%, #895fc4 100%);
-    color: #191321;
-    border-radius: 8px;
-    box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.6);
-    animation: slide-in-from-bottom 0.7s ease-out;
-  }
-  
-  #summary img {
-    display: block;
-    width: 8rem;
-    height: 8rem;
-    object-fit: contain;
-    margin: 0 auto 1rem auto;
-    padding: 1rem;
-    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
-    border: 2px solid #3a2353;
-    border-radius: 50%;
-    background: #c18cfa;
-  }
+@media screen and (max-width: 600px) {
   
   #summary h2 {
     font-size: 1.5rem;
@@ -387,16 +366,14 @@ header h1 {
    
   
   #summary-stats {
-    margin: auto;
     gap: 1.5rem;
-    
+    width: 100%;
   }
   
   #summary-stats .number {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
+    margin-bottom: 6px;
   }
-  
-  
 }
 
 @keyframes slide-in-from-bottom {
