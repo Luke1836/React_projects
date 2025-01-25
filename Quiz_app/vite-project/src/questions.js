@@ -19,7 +19,7 @@ export default [
         'Part of the Redux library for managing global state.',
       ],
     },
-    {
+    /* {
       id: 'q3',
       text: 'Can you identify what JSX is?',
       answers: [
@@ -198,5 +198,5 @@ export default [
           'To define caching instructions for the request.',
           'To include authorization credentials for the request.',
         ],
-      },
+      }, */
   ];
