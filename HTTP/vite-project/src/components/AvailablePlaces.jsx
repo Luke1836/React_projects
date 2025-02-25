@@ -1,61 +1,53 @@
+import { useState, useEffect } from 'react';
+
 import Places from './Places.jsx';
-import { useEffect, useState } from 'react'
 import Error from './Error.jsx';
 import { sortPlacesByDistance } from '../loc.js';
+import { fetchAvailablePlaces } from '../http.js';
 
-export default function AvailablePlaces({ onSelectPlace }) 
-{
-  const [ fetchingData, setFetchingData ] = useState();
-  const [ availablePlaces, setAvailablePlaces ] = useState([]);
-  const [ error, setError ] = useState();
+export default function AvailablePlaces({ onSelectPlace }) {
+  const [isFetching, setIsFetching] = useState(false);
+  const [availablePlaces, setAvailablePlaces] = useState([]);
+  const [error, setError] = useState();
 
   useEffect(() => {
-    async function fetchData()
-    {
+    async function fetchPlaces() {
+      setIsFetching(true);
+
       try {
-        setFetchingData(true);
-        const response = await fetch("http://localhost:3000/places");
-        const resData = await response.json();
-        setAvailablePlaces(resData.places);
-        if(!response.ok)
-          throw new Error('Failed to fetch the data!');
+        const places = await fetchAvailablePlaces();
 
         navigator.geolocation.getCurrentPosition((position) => {
-              const sortedPlaces = sortPlacesByDistance(
-                resData.places,
-                position.coords.latitude,
-                position.coords.longitude
-              )
-              setAvailablePlaces(sortedPlaces);
-              setFetchingData(false);
+          const sortedPlaces = sortPlacesByDistance(
+            places,
+            position.coords.latitude,
+            position.coords.longitude
+          );
+          setAvailablePlaces(sortedPlaces);
+          setIsFetching(false);
         });
-
-      }
-      catch(error)
-      {
+      } catch (error) {
         setError({
-          message: error.message || "Couldn't fetch the data! Please try again later!" 
+          message:
+            error.message || 'Could not fetch places, please try again later.',
         });
-        setFetchingData(false);
-      }     
+        setIsFetching(false);
+      }
     }
-    
-    fetchData();
+
+    fetchPlaces();
   }, []);
 
+  if (error) {
+    return <Error title="An error occurred!" message={error.message} />;
+  }
 
-  if(error)
-    return (
-      <Error title="An Error has occured" message={ error.message } />
-    )
-
-  
   return (
     <Places
       title="Available Places"
-      isLoading={ fetchingData }
-      loadingText="Fetching Data...."
-      places={ availablePlaces }
+      places={availablePlaces}
+      isLoading={isFetching}
+      loadingText="Fetching place data..."
       fallbackText="No places available."
       onSelectPlace={onSelectPlace}
     />
