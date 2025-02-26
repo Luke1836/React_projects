@@ -7,12 +7,32 @@ export default function Login()
     password: ''
   });
 
+  const [ isFocused, setIsFocused ] = useState({
+    email: false,
+    password: false
+  });
+
+  function handleValidation(event)
+  {
+    setIsFocused((prevData) => ({
+      ...prevData,
+      [event.target.name]: true
+    }));
+  }
+
+  const isEmailInvalid = !isFocused.email && !formData.email.includes('@') && !formData.email.includes('.');
+
   function handleChange(event)
   {
     setFormData(prevData => ({
       ...prevData,
       [event.target.name]: event.target.value
-    }))
+    }));
+
+    setIsFocused((prevData) => ({
+      ...prevData,
+      [event.target.name]: false
+    }));
   }
 
 
@@ -34,8 +54,12 @@ export default function Login()
               id="email" 
               type="email" 
               name="email"
+              onBlur={ handleValidation }
               onChange={ handleChange }    
           />
+          <div className='control-error'>
+            { isEmailInvalid && <p>Please enter a valid email address!</p>}
+          </div>
         </div>
 
         <div className="control no-margin">
