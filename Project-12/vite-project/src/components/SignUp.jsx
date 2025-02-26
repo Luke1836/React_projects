@@ -43,7 +43,7 @@ function SignUp()
       </div>
 
       <div className="control">
-        <label htmlFor="phone">What best describes your role?</label>
+        <label htmlFor="role">What best describes your role?</label>
         <select id="role" name="role">
           <option value="student">Student</option>
           <option value="teacher">Teacher</option>
