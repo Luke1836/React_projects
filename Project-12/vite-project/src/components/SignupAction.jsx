@@ -9,6 +9,7 @@ import {
 
 export default function Signup() 
 {
+
   function signupAction(prevFormState, formData) 
   {
     const email = formData.get('email');
@@ -57,7 +58,7 @@ export default function Signup()
     return { errors: null };
   }
 
-  const [formState, formAction] = useActionState(signupAction, {
+  const [formState, formAction, pending] = useActionState(signupAction, {
     errors: null,
   });
 
@@ -148,6 +149,8 @@ export default function Signup()
         </label>
       </div>
 
+
+      { /* Print the errors in the form to the user */ }
       {formState.errors && (
         <ul className="error">
           {formState.errors.map((error) => (
