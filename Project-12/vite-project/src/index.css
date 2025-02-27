@@ -158,3 +158,8 @@ fieldset {
   background-color: transparent;
   color: #869999;
 }
+
+.error {
+  color: #ffca99;
+  padding: 0 1rem;
+}
