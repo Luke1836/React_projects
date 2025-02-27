@@ -45,6 +45,7 @@ async function downvoteOpinion(id) {
 
 const app = express();
 
+
 // CORS
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -53,7 +54,10 @@ app.use((req, res, next) => {
   next();
 });
 
+
 app.use(express.json());
+
+
 
 app.get('/opinions', async (req, res) => {
   try {
@@ -63,6 +67,8 @@ app.get('/opinions', async (req, res) => {
     res.status(500).json({ error: 'Error loading opinions.' });
   }
 });
+
+
 
 app.post('/opinions', async (req, res) => {
   const { userName, title, body } = req.body;
@@ -82,6 +88,8 @@ app.post('/opinions', async (req, res) => {
   }
 });
 
+
+
 app.post('/opinions/:id/upvote', async (req, res) => {
   const { id } = req.params;
   await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -95,6 +103,8 @@ app.post('/opinions/:id/upvote', async (req, res) => {
     res.status(500).json({ error: 'Error upvoting opinion.' });
   }
 });
+
+
 
 app.post('/opinions/:id/downvote', async (req, res) => {
   const { id } = req.params;
@@ -110,6 +120,8 @@ app.post('/opinions/:id/downvote', async (req, res) => {
     res.status(500).json({ error: 'Error downvoting opinion.' });
   }
 });
+
+
 
 app.listen(3000, () => {
   console.log('Server running on http://localhost:3000');
